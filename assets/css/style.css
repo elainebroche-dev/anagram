@@ -87,6 +87,28 @@ body {
 	font-size: 80%;
 }
 
+.button {
+    background-color: #f57309;
+    border: none;
+    color: #fafafa;
+    padding: 0.8rem;
+    font-size: 1.25rem;
+    margin-top: 1.5rem;
+    width: 17.5rem;
+    border-radius: 11px;
+    border-bottom: 4px solid #bd5907;
+ }
+ 
+ .button:hover {
+    background-color: #f38429;
+ }
+ 
+ .button:active {
+   background-color: #f38429;
+   border-bottom: 4px solid transparent;
+   transform: translateY(4px);
+ }
+ 
 /* styling for the login panel */
 #login-panel {
     display:none;
@@ -94,7 +116,15 @@ body {
 
 /* styling for the choose-topic panel */
 #choose-topic-panel {
-    display:none;
+    /*display:none;*/
+    padding-top: 5rem;
+}
+
+.info-text {
+	padding: 2rem;
+	letter-spacing: 0.125rem; 
+	font-size: 1.8em; 
+	font-weight:bold;
 }
 
 /* styling for the game playing panel */
