@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Questrial&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+body {
+    font-family: Questrial, sans-serif;
+    font-weight: 400;
+    color: #3a3a3a;
+}
+
+#background-image {
+    position: fixed; 
+    top: -50%; 
+    left: -50%; 
+    width: 200%; 
+    height: 200%;
+  }
+
+  #background-image img {
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    right: 0; 
+    bottom: 0; 
+    margin: auto; 
+    min-width: 50%;
+    min-height: 50%;
+    
+    /* animates zoom effect on loading page */
+    animation-name: game-image-zoom;
+    animation-duration: 5s;
+    animation-fill-mode: forwards;
+  }
+  
+  /* creates the level of zoom for hero image */
+  @keyframes game-image-zoom {
+      from {
+          transform: scale(1);
+      }
+      to {
+          transform: scale(1.1);
+      }
+  }
+  
+#main-panel {
+	width: 31.25rem;
+	height: 37.5rem;
+	background-color : rgba(60, 60, 60, 0.9);
+	position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    padding: 1rem 1.8rem 2.3rem;
+    text-align: center;
+    color: #fff;
+    text-transform: uppercase;
+}
+
