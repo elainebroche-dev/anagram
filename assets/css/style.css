@@ -109,14 +109,42 @@ body {
    transform: translateY(4px);
  }
  
-/* styling for the login panel */
-#login-panel {
-    display:none;
+ .user-input input, .user-input label {
+	font-size: 150%;
+	font-family: Questrial, sans-serif;
+	text-align : center;
+	margin: 0.5rem auto;
+	border-radius:0.3rem;
 }
 
-/* styling for the choose-topic panel */
-#choose-topic-panel {
+.user-input input {
+	padding: 1.5rem 0;
+	width: 500px;
+}
+
+.user-message {
+    padding:2rem;
+    color:gold;
+}
+
+/* styling for the login panel */
+#login-panel {
     /*display:none;*/
+    padding-top: 8rem;
+}
+
+#user {
+	border-radius:0.3rem;
+	padding: 0.8rem 0;
+}
+ 
+#message-1 {
+    /*display:none;*/
+}
+
+/* styling for the 'choose topic' panel */
+#choose-topic-panel {
+    display:none;
     padding-top: 5rem;
 }
 
@@ -132,11 +160,15 @@ body {
     display:none;
 }
 
-/* styling for the end of round panel */
+/* styling for the 'end of round' panel */
 #end-panel {
     display:none;
+    padding-top: 8rem;
 }
 
+#result-text {
+	font-size:140%;
+}
 
 /* For small screens sizes from 510px wide and down */
 @media screen and (max-width: 510px) {
