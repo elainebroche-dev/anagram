@@ -81,7 +81,7 @@ body {
 	padding-right: 0.5rem;
 }
 
-.exit {
+#exit {
 	float: left;
 	font-size:150%;
 	background-color: transparent;
@@ -159,9 +159,10 @@ body {
 }
 
 /* styling for the 'choose topic' panel */
-#choose-topic-panel {
+#topic-panel {
     display:none;
-    padding-top: 5rem;
+    clear:both;
+    padding-top: 4rem;
 }
 
 .info-text {
@@ -172,7 +173,7 @@ body {
 
 /* styling for the game playing panel */
 #game-panel {
-    /*display:none;*/
+    display:none;
     clear: both;
 }
 
