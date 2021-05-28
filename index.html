@@ -13,7 +13,7 @@
 <body>
     <header>
         <div id="background-image">
-            <img src="assets/images/background.webp" alt="abstract background image">
+            <img src="aassets/images/background.webp" alt="abstract background image">
         </div>
     </header>
     <div id="main-panel">
@@ -43,7 +43,25 @@
         </section>
 
         <section id="game-panel">
-            this is where the game gets played
+            <div class="status-bar">
+                <div id="timer"></div>
+            </div>
+            <p class="info-text" id="topic-title">TOPIC TITLE</p>
+            <div id="word-display">this is where the topic will go holder</div>
+            <div class="user-input">
+                <label for="answer">Your Answer</label>
+                <textarea id="answer" name="answer" maxlength="100"></textarea>
+                <div id="result">
+                    <i class="fas fa-check-circle"></i>
+                    <i class="fas fa-times-circle"></i>
+                </div>
+            </div>
+            <button class="button">Check Answer</button>
+            <div class="status-bar">
+                <div id="progress"></div>
+                <p id="num-asked">2 of 10<p>
+                <p id="num-correct">0 correct answers</p>
+            </div>
         </section>
 
         <section id="end-panel">

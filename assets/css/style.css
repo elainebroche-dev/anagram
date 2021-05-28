@@ -54,7 +54,7 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
-    padding: 1rem 1.8rem 2.3rem;
+    padding: 1rem 1.5rem 2.3rem;
     text-align: center;
     color: #fff;
     text-transform: uppercase;
@@ -109,7 +109,7 @@ body {
    transform: translateY(4px);
  }
  
- .user-input input, .user-input label {
+ .user-input input, .user-input label, .user-input textarea {
 	font-size: 150%;
 	font-family: Questrial, sans-serif;
 	text-align : center;
@@ -119,9 +119,14 @@ body {
 
 .user-input input {
 	padding: 1.5rem 0;
-	width: 500px;
+	width: 26rem;
 }
 
+.user-input textarea {
+	padding: 0.5rem 0.3rem;
+	width: 30.625rem;
+	text-align : left;
+}
 .user-message {
     padding:2rem;
     color:gold;
@@ -129,7 +134,7 @@ body {
 
 /* styling for the login panel */
 #login-panel {
-    /*display:none;*/
+    display:none;
     padding-top: 8rem;
 }
 
@@ -139,12 +144,12 @@ body {
 }
  
 #message-1 {
-    /*display:none;*/
+    display:none;
 }
 
 /* styling for the 'choose topic' panel */
 #choose-topic-panel {
-    display:none;
+    /*display:none;*/
     padding-top: 5rem;
 }
 
@@ -152,13 +157,58 @@ body {
 	padding: 2rem;
 	letter-spacing: 0.125rem; 
 	font-size: 1.8em; 
-	font-weight:bold;
 }
 
 /* styling for the game playing panel */
 #game-panel {
     display:none;
+    clear: both;
 }
+
+.status-bar {
+	padding-top: 1.4rem;
+    width: 100%;
+  /*background-color: lightgrey;*/
+    border-radius: 16px;
+}
+
+#timer {
+    width: 100%;
+    height: 10px;
+    background-color: #f57309;
+    border-radius: 1rem;
+  }
+
+  #word-display {
+	margin: 0 auto 2rem;
+	background-color: #fafafa;
+	position: relative;
+	color: black;
+	font-size: 150%;
+	padding: 2rem 0;
+	border-radius:0.3rem;
+}
+
+#result {
+	font-size:2em;
+	padding-top : 1.25rem;	
+}
+
+#progress {
+    width: 100%;
+    height: 0.625rem;
+    background-color: #f57309;
+    border-radius: 1rem;
+    margin: 0.8rem auto;
+  }
+  
+  #num-asked {
+      float:left;
+  }
+  
+  #num-correct {
+      float:right;
+  }
 
 /* styling for the 'end of round' panel */
 #end-panel {
@@ -171,9 +221,22 @@ body {
 }
 
 /* For small screens sizes from 510px wide and down */
-@media screen and (max-width: 510px) {
+@media screen and (max-width: 540px) {
     #main-panel {
         width: 17.5rem;
         padding: 0.625rem;
     }
+
+    .user-input input {
+		width: 17.5rem;
+	}
+	
+	.user-input textarea {
+		width: 16.875rem;
+	}
+
+	#word-display {
+		padding: 1rem 0;
+	}
+
 }
