@@ -158,7 +158,8 @@ to be written
 - All other content was written by the developer
 
 ### Code - to be written
-- To be written : Code on how to do xxxxxxx came from information on this page : [to be written](https://to be written)
+- Code on how to do a full page background came from information on this website : [Full Page Backgound](https://css-tricks.com/perfect-full-page-background-image/ )
+- Code on how to do the fade-in of the background image came from information on this website : [Fade In](https://blog.hubspot.com/website/css-fade-in)
 
 ### Media 
 - To be written : The fonts used were imported from [Google Fonts](https://fonts.google.com/)
