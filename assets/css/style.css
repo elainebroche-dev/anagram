@@ -60,3 +60,58 @@ body {
     text-transform: uppercase;
 }
 
+.top-line {
+	line-height:1.875rem;
+}
+
+.top-line p {
+	float: right;
+	padding-top: 0.25rem;
+	padding-right: 0.5rem;
+}
+
+.exit {
+	float: left;
+	font-size:150%;
+	background-color: transparent;
+	color : #fafafa;
+	padding-top: 0.3rem;
+}
+.user-icon {
+	font-size:220%; 
+	float:right;
+}
+
+#username {
+	font-weight: 200;
+	font-size: 80%;
+}
+
+/* styling for the login panel */
+#login-panel {
+    display:none;
+}
+
+/* styling for the choose-topic panel */
+#choose-topic-panel {
+    display:none;
+}
+
+/* styling for the game playing panel */
+#game-panel {
+    display:none;
+}
+
+/* styling for the end of round panel */
+#end-panel {
+    display:none;
+}
+
+
+/* For small screens sizes from 510px wide and down */
+@media screen and (max-width: 510px) {
+    #main-panel {
+        width: 17.5rem;
+        padding: 0.625rem;
+    }
+}
