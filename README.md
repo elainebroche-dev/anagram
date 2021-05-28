@@ -1,59 +1,177 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+<h1 align="center">Thrive Juices and Smoothies Website</h1>
 
-Welcome elainebroche-dev,
+[View the live project here](https://elainebroche-dev.github.io/ms2-anagram/)
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use.
+To be written
 
-## Gitpod Reminders
+![Mockup](documentation/to be written)
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+## Index – Table of Contents
+* [User Experience (UX)](#user-experience-ux) 
+* [Features](#features)
+* [Design](#design)
+* [Technologies Used](#technologies-used)
+* [Testing](#testing)
+* [Deployment](#deployment)
+* [Credits](#credits)
 
-`python3 -m http.server`
+## User Experience (UX)
 
-A blue button should appear to click: _Make Public_,
+-   ### User stories
 
-Another blue button should appear to click: _Open Browser_.
+    -   #### A. First Time Visitor Goals
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+        1. To be written
+        2. To be written
 
-A blue button should appear to click: _Make Public_,
+    -   #### B. Returning Visitor Goals
 
-Another blue button should appear to click: _Open Browser_.
+        1. To be written
+        2. To be written
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+    -   #### C. Frequent User Goals
+        1. To be written
+     
 
-To log into the Heroku toolbelt CLI:
+## Features
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+### Existing Features
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidently make it public then you can create a new one with _Regenerate API Key_.
+-   __F01 To be written__
 
-## Updates Since The Instructional Video
+    - To be written
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+      ![To be written](documentation/to be written)
+    
+- __How these features support the User Stories__
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+    - The User Stories in the [User Experience (UX)](#user-experience-ux) part of this document are numbered and categorised into groups A (first time visitor), B (returning visitor) and C (frequent visitor).  The existing features are listed above as F01 to F08.  Below is a traceability matrix cross-referencing the user stories with the features, illustrating which features support which stories :
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+    ![User Story Feature Matrix](documentation/to be written)
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+### Features which could be implemented in the future
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+- __To be written__
+    - To be written
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+## Design
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+-   ### Imagery
+    -   To be written
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+-   ### Colour Scheme
+    -  To be written
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+        ![Colour Palette](documentation/to be written)
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+-   ### Typography
+    -   To be written
 
----
 
-Happy coding!
+-   ### Wireframes
+
+    -   #### To be written Wireframes
+
+        ![To be written](documentation/to be written)
+
+## Technologies Used
+
+### Languages Used
+
+-   [HTML5](https://en.wikipedia.org/wiki/HTML5)
+-   [CSS3](https://en.wikipedia.org/wiki/Cascading_Style_Sheets)
+-   [Javascript](https://en.wikipedia.org/wiki/JavaScript)
+
+### Frameworks, Libraries & Programs Used
+
+-   [Google Fonts:](https://fonts.google.com/) to be written
+-   [Font Awesome:](https://fontawesome.com/) was used to add icons for aesthetic and UX purposes.
+-   [Git:](https://git-scm.com/) was used for version control by utilising the Gitpod terminal to commit to Git and Push to GitHub.
+-   [GitHub:](https://github.com/) is used as the respository for the projects code after being pushed from Git.
+-   [Microsoft Paint 3D:](https://www.microsoft.com/en-us/p/paint-3d/9nblggh5fv99?activetab=pivot:overviewtab) was used for resizing images and editing photos for the website.
+-   [Balsamiq:](https://balsamiq.com/) was used to create the wireframes during the design process.
+
+to be written
+    
+
+## Testing
+
+### Validator Testing - to be written and extended for JS
+
+- [HTML Validator](https://validator.w3.org/)
+
+    - result for to be written
+      ![to be written](documentation/validation-results/to be written)
+  
+    - Full validation results are available on github here :
+
+        - <a href="to be written" target="_blank">to be written</a>
+
+- [CSS Validator](https://jigsaw.w3.org/css-validator/)
+
+    - result for styles.css 
+      ![to be written](to be written)
+
+      ????? to be written - The warnings are due to 1) import of the Google fonts and 2) a webkit extension for Safari support of the flip-card effect used on the home page.
+
+    - Full validation results are available on github here :
+
+        - <a href="to be written" target="_blank">to be written</a>
+
+### Browser Compatibility
+
+- Testing has been carried out on the following browsers :
+    - to be written
+    
+### Test Cases and Results
+
+- The below table details the test cases that were used, the results and a cross-reference to the Feature ID that each test case exercised (click to open iamge):
+
+  ![to be written](documentation/to be written)
+
+### Known bugs
+
+- To be written
+
+## Deployment
+
+### How this site was deployed
+
+- In the GitHub repository, navigate to the Settings tab, then choose Pages from the left hand menu 
+- From the source section drop-down menu, select the Master Branch
+- Once the master branch has been selected, the page will be automatically refreshed with a detailed ribbon display to indicate the successful deployment
+- Any changes pushed to the master branch will take effect on the live project
+
+  The live link can be found here - [ANAGRAM](https://elainebroche-dev.github.io/ms2-anagram/index.html) 
+
+### How to clone the repository
+
+- Go to the https://github.com/elainebroche-dev/ms1-thrive repository on GitHub 
+- Click the "Code" button to the right of the screen, click HTTPs and copy the link there
+- Open a GitBash terminal and navigate to the directory where you want to locate the clone
+- On the command line, type "git clone" then paste in the copied url and press the Enter key to begin the clone process
+ 
+## Credits 
+
+### Content 
+- To be written
+- All other content was written by the developer
+
+### Code - to be written
+- To be written : Code on how to do xxxxxxx came from information on this page : [to be written](https://to be written)
+
+### Media 
+- To be written : The fonts used were imported from [Google Fonts](https://fonts.google.com/)
+- To be written : The colours used were based on ??????
+- To be wrritten : The icons xxxxxx were taken from [Font Awesome](https://fontawesome.com/)
+
+
+- All images were downloaded from [Unsplash](https://unsplash.com) :
+
+    - Background photo by <a href="https://unsplash.com/@ripato?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Ricardo Gomez Angel</a> on <a href="https://unsplash.com/photos/5YM26lUicfU">Unsplash</a>
+
+
+  
+### Acknowledgments
+
+- To be written.
