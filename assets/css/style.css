@@ -1,5 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Questrial&display=swap');
 
+:root {
+    --midgrey : #3a3a3a;
+    --panel-grey : rgba(60, 60, 60, 0.9);
+    --offwhite: #fafafa;
+    --border-orange: #bd5907;
+    --button-orange: #f38429;
+    --bg-orange: #f57309;
+    --msg-text: gold;
+    --question-text : black;
+ }
+
 * {
     margin: 0;
     padding: 0;
@@ -9,7 +20,7 @@
 body {
     font-family: Questrial, sans-serif;
     font-weight: 400;
-    color: #3a3a3a;
+    color: var(--midgrey);
 }
 
 #background-image {
@@ -49,14 +60,14 @@ body {
 #main-panel {
 	width: 31.25rem;
 	height: 37.5rem;
-	background-color : rgba(60, 60, 60, 0.9);
+	background-color : var(--panel-grey);
 	position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
     padding: 1rem 1.5rem 2.3rem;
     text-align: center;
-    color: #fff;
+    color: var(--offwhite);
     text-transform: uppercase;
 }
 
@@ -74,7 +85,7 @@ body {
 	float: left;
 	font-size:150%;
 	background-color: transparent;
-	color : #fafafa;
+	color : var(--offwhite);
 	padding-top: 0.3rem;
 }
 .user-icon {
@@ -88,23 +99,23 @@ body {
 }
 
 .button {
-    background-color: #f57309;
+    background-color: var(--bg-orange);
     border: none;
-    color: #fafafa;
+    color: var(--offwhite);
     padding: 0.8rem;
     font-size: 1.25rem;
     margin-top: 1.5rem;
     width: 17.5rem;
     border-radius: 11px;
-    border-bottom: 4px solid #bd5907;
+    border-bottom: 4px solid var(--border-orange);
  }
  
  .button:hover {
-    background-color: #f38429;
+    background-color: var(--button-orange);
  }
  
  .button:active {
-   background-color: #f38429;
+   background-color: var(--button-orange);
    border-bottom: 4px solid transparent;
    transform: translateY(4px);
  }
@@ -129,7 +140,7 @@ body {
 }
 .user-message {
     padding:2rem;
-    color:gold;
+    color: var(--msg-text);
 }
 
 /* styling for the login panel */
@@ -149,7 +160,7 @@ body {
 
 /* styling for the 'choose topic' panel */
 #choose-topic-panel {
-    /*display:none;*/
+    display:none;
     padding-top: 5rem;
 }
 
@@ -161,7 +172,7 @@ body {
 
 /* styling for the game playing panel */
 #game-panel {
-    display:none;
+    /*display:none;*/
     clear: both;
 }
 
@@ -174,16 +185,16 @@ body {
 
 #timer {
     width: 100%;
-    height: 10px;
-    background-color: #f57309;
+    height: 0.625rem;
+    background-color: var(--bg-orange);
     border-radius: 1rem;
   }
 
-  #word-display {
+#word-display {
 	margin: 0 auto 2rem;
-	background-color: #fafafa;
+	background-color: var(--offwhite);
 	position: relative;
-	color: black;
+	color: var(--question-text);
 	font-size: 150%;
 	padding: 2rem 0;
 	border-radius:0.3rem;
@@ -197,7 +208,7 @@ body {
 #progress {
     width: 100%;
     height: 0.625rem;
-    background-color: #f57309;
+    background-color: var(--bg-orange);
     border-radius: 1rem;
     margin: 0.8rem auto;
   }
