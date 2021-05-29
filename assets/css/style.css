@@ -177,6 +177,10 @@ body {
     padding-top: 4rem;
 }
 
+.topic-btn {
+    display: none;
+}
+
 /* styling for the game playing panel */
 #game-panel {
     display:none;

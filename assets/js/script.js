@@ -26,10 +26,25 @@ document.addEventListener("DOMContentLoaded", function() {
     document.getElementById("play-again").addEventListener("click",runTopics);
     document.getElementById("end-game").addEventListener("click",runLogin);
 
+    // set up the topic list
+    loadTopics();
+
     // kick off the login
     runLogin();
 })
 
+/**
+ * Put the names of the topics on the 4 topic buttons 
+ * if less than 4 topics are available - the number of topic buttons visible will match the number of topics loaded
+ * - this function be extended later to choose 4 topics at random if more data was available in the quiz data structure
+ */
+function loadTopics() {
+    let topics = document.getElementsByClassName("topic-btn");
+    for (let i = 0; (i < 4) && (i < quiz.length); i++) {
+        topics[i].innerText = quiz[i].topicTitle;
+        topics[i].style.display = "inline";
+    }
+}
 /**
  * if the exit button is clicked move back - close the window if x is clicked on the login screen
  */
@@ -114,6 +129,7 @@ function runEndGame() {
  * verify that the username entered is valid 
  */
  function checkUser() {
+     
     let regexp = /^[0-9a-zA-Z]+$/;
     let username = document.getElementById("user").value.trim();
     
