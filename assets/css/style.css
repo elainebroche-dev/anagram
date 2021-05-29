@@ -96,6 +96,13 @@ body {
 #username {
 	font-weight: 200;
 	font-size: 80%;
+    text-transform: none;
+}
+
+.info-text {
+	padding: 2rem;
+	letter-spacing: 0.125rem; 
+	font-size: 1.8em; 
 }
 
 .button {
@@ -128,6 +135,10 @@ body {
 	border-radius:0.3rem;
 }
 
+.user-input p {
+    text-transform: lowercase;
+}
+
 .user-input input {
 	padding: 1.5rem 0;
 	width: 26rem;
@@ -138,6 +149,7 @@ body {
 	width: 30.625rem;
 	text-align : left;
 }
+
 .user-message {
     padding:2rem;
     color: var(--msg-text);
@@ -163,12 +175,6 @@ body {
     display:none;
     clear:both;
     padding-top: 4rem;
-}
-
-.info-text {
-	padding: 2rem;
-	letter-spacing: 0.125rem; 
-	font-size: 1.8em; 
 }
 
 /* styling for the game playing panel */

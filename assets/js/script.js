@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", function() {
 })
 
 /**
- * if the exit button is clicked move back a screen - close the window if x is clicked on the login screen
+ * if the exit button is clicked move back - close the window if x is clicked on the login screen
  */
 function exit() {
     let panels = document.getElementsByClassName("panel");
@@ -61,6 +61,9 @@ function showPanel(panelName) {
  * show the user the login screen and initialise game
  */
 function runLogin() {
+    document.getElementById("message-1").style.display = "none";
+    document.getElementById("username").innerText = "";
+    document.getElementById("user").value = "";
     showPanel("login-panel");
     document.getElementById("user").focus();
 }
@@ -91,9 +94,19 @@ function runEndGame() {
  * verify that the username entered is valid 
  */
  function checkUser() {
-    console.log("check the user name entered");
-
-    runTopics('topic-panel');
+    let regexp = /^[0-9a-zA-Z]+$/;
+    let username = document.getElementById("user").value.trim();
+    
+    // check that the username satisfies the alphanumeric reg expression
+    if(username.match(regexp)) {
+        document.getElementById("username").innerText = username;
+        runTopics('topic-panel');
+    }
+    else {
+        document.getElementById("message-1").style.display = "block";
+        document.getElementById("user").value = "";
+        document.getElementById("user").focus();
+    }
 }
 
 /**
