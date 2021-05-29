@@ -181,6 +181,10 @@ body {
     display: none;
 }
 
+#topic-index {
+    display:none;
+}
+
 /* styling for the game playing panel */
 #game-panel {
     display:none;

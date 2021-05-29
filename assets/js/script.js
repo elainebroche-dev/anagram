@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function() {
     let topics = document.getElementsByClassName("topic-btn");
     for (let topic of topics) {
         topic.addEventListener("click", function() {
-            runGame();
+            runGame(this.innerText);
         })
     }
 
@@ -93,8 +93,22 @@ function runTopics() {
 /**
  * initialise a new round of the game and show the user the game screen
  */
-function runGame() {
+function runGame(topicTitle) {
+    document.getElementById("topic-title").innerText = topicTitle;
     document.getElementById("num-asked").innerText = "1 of 10";
+    document.getElementById("num-correct").innerText = "0 correct answers";
+    document.getElementById("progress").style.width = "10%";
+    document.getElementById("check-answer").innerText = "Check Answer"
+
+    // get the index of the topic so that it can be used when accessing the quiz data structure
+    let topicNumber = getTopicIndex();
+
+    // build a random array of question numbers for the current topic
+    let randNums = getQuestionList(topicNumber);
+
+    // display the first question
+    document.getElementById("word-display").innerText = quiz[topicNumber].questions[randNums[0]].question;
+
     showPanel("game-panel");
 }
 
@@ -145,19 +159,43 @@ function runEndGame() {
     }
 }
 
+/** 
+ * set the topic-index number based on the topic title - this will be used to index into the quiz data structure
+*/
+function getTopicIndex() {
+    let topicTitle = document.getElementById("topic-title").innerText;
+    let topicNumber = -1;
+    for (let i = 0; i < quiz.length; i++) {
+        if (quiz[i].topicTitle == topicTitle) {
+            topicNumber = i;
+            break;
+        }
+    }
+    if (topicNumber < 0) {
+        alert (`Unknown topic : ${topicTitle}`);
+        throw `Unknown topic : ${topicTitle}`;
+    } else {
+         return topicNumber;
+    }
+}
+
+/**
+ * return an array of 10 question numbers
+ */
+function getQuestionList(topicNumber) {
+    let questions = [2,7,8,3,4,11,19,0,6,12];
+    return questions;
+}
 /**
  * check the answer entered by the user, give feedback, update scores move to next question
  */
 function checkAnswer() {
-    console.log("check answer");
-    console.log("lots to be written here");
     if (document.getElementById("check-answer").innerText === "End Round") {
         runEndGame(); 
     }
     else {
-        console.log("got to here");
 
-        let isCorrect = true;
+        let isCorrect = true;  // this line is temporary
 
         if (isCorrect) {
             console.log("answer is correct");
@@ -171,8 +209,8 @@ function checkAnswer() {
         let questionsAsked = parseInt(document.getElementById("num-asked").innerText.substring(0,document.getElementById("num-asked").innerText.indexOf(' ')));
         if (questionsAsked < 10) {
             incCounter("num-asked");
+            console.log("ask another question");
         } else {
-            console.log("no more questions to ask");
             document.getElementById("check-answer").innerText = "End Round";
         }
     }
@@ -191,3 +229,4 @@ function incCounter(itemName) {
         document.getElementById("progress").style.width = currNum * 10 + "%"; 
     }
 }
+
