@@ -95,7 +95,7 @@ body {
 
 #username {
 	font-weight: 200;
-	font-size: 80%;
+	font-size: 90%;
     text-transform: none;
 }
 
@@ -213,11 +213,12 @@ body {
 }
 
 #progress {
-    width: 100%;
+    width: 10%;
     height: 0.625rem;
     background-color: var(--bg-orange);
     border-radius: 1rem;
-    margin: 0.8rem auto;
+    margin: 0.8rem 0;
+    text-align: left;
   }
   
   #num-asked {

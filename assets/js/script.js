@@ -80,6 +80,7 @@ function runTopics() {
  * initialise a new round of the game and show the user the game screen
  */
 function runGame() {
+    document.getElementById("num-asked").innerText = "1 of 10";
     showPanel("game-panel");
 }
 
@@ -114,6 +115,44 @@ function runEndGame() {
  */
 function checkAnswer() {
     console.log("check answer");
-    // for now just go to the end page
-    runEndGame();
+    console.log("lots to be written here");
+    if (document.getElementById("check-answer").innerText === "End Round") {
+        runEndGame(); 
+    }
+    else {
+        console.log("got to here");
+
+        let isCorrect = true;
+
+        if (isCorrect) {
+            console.log("answer is correct");
+            incCounter("num-correct");
+        }
+        else {
+            console.log("answer is wrong")
+        }
+
+        
+        let questionsAsked = parseInt(document.getElementById("num-asked").innerText.substring(0,document.getElementById("num-asked").innerText.indexOf(' ')));
+        if (questionsAsked < 10) {
+            incCounter("num-asked");
+        } else {
+            console.log("no more questions to ask");
+            document.getElementById("check-answer").innerText = "End Round";
+        }
+    }
+}
+
+/**
+ * for the item id passed in, get the first part of the string and increment it, put it back in the html 
+ * */ 
+function incCounter(itemName) {
+    let currStr = document.getElementById(itemName).innerText;
+    let currNum = parseInt(currStr.substring(0,currStr.indexOf(' ')));
+    let restOfStr = currStr.substring(currStr.indexOf(' '));
+    document.getElementById(itemName).innerText = ++currNum + restOfStr;
+
+    if (itemName === "num-asked") {   // need to update the progress bar as well for "num-asked"
+        document.getElementById("progress").style.width = currNum * 10 + "%"; 
+    }
 }

@@ -162,6 +162,7 @@ to be written
 - Code on how to do the fade-in of the background image came from information on this website : [Fade In](https://blog.hubspot.com/website/css-fade-in)
 - Code on how to do the button click effect using a border came from information on this website : [Button Click](https://stackoverflow.com/questions/9612758/add-a-css-border-on-hover-without-moving-the-element)
 - Code on how to use a regular expression to validate the username came from information on this website : [Regular Expression](https://stackoverflow.com/questions/16299036/to-check-if-a-string-is-alphanumeric-in-javascripthttps://stackoverflow.com/questions/16299036/to-check-if-a-string-is-alphanumeric-in-javascript)
+- Code to help parse strings came from information on this website : [Substring Example](https://stackoverflow.com/questions/10272773/split-string-on-the-first-white-space-occurrence/10272822)
 
 ### Media 
 - To be written : The fonts used were imported from [Google Fonts](https://fonts.google.com/)
