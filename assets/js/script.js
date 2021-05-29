@@ -33,6 +33,8 @@ document.addEventListener("DOMContentLoaded", function() {
     runLogin();
 })
 
+let randNums = [];
+
 /**
  * Put the names of the topics on the 4 topic buttons 
  * if less than 4 topics are available - the number of topic buttons visible will match the number of topics loaded
@@ -84,7 +86,7 @@ function runLogin() {
 }
 
 /**
- * initialise list of topics and show the user the topic screen
+ * show the user the list of topics to choose from
  */
 function runTopics() {
     showPanel("topic-panel"); 
@@ -101,10 +103,13 @@ function runGame(topicTitle) {
     document.getElementById("check-answer").innerText = "Check Answer"
 
     // get the index of the topic so that it can be used when accessing the quiz data structure
-    let topicNumber = getTopicIndex();
+    console.log(document.getElementById("topic-title").innerText);
+
+    let topicNumber = quiz.map(function(e) { return e.topicTitle; }).indexOf(document.getElementById("topic-title").innerText);
+    console.log(topicNumber);
 
     // build a random array of question numbers for the current topic
-    let randNums = getQuestionList(topicNumber);
+    randNums = getQuestionList(topicNumber);
 
     // display the first question
     document.getElementById("word-display").innerText = quiz[topicNumber].questions[randNums[0]].question;
@@ -159,26 +164,6 @@ function runEndGame() {
     }
 }
 
-/** 
- * set the topic-index number based on the topic title - this will be used to index into the quiz data structure
-*/
-function getTopicIndex() {
-    let topicTitle = document.getElementById("topic-title").innerText;
-    let topicNumber = -1;
-    for (let i = 0; i < quiz.length; i++) {
-        if (quiz[i].topicTitle == topicTitle) {
-            topicNumber = i;
-            break;
-        }
-    }
-    if (topicNumber < 0) {
-        alert (`Unknown topic : ${topicTitle}`);
-        throw `Unknown topic : ${topicTitle}`;
-    } else {
-         return topicNumber;
-    }
-}
-
 /**
  * return an array of 10 question numbers
  */
@@ -221,8 +206,8 @@ function checkAnswer() {
  * */ 
 function incCounter(itemName) {
     let currStr = document.getElementById(itemName).innerText;
-    let currNum = parseInt(currStr.substring(0,currStr.indexOf(' ')));
-    let restOfStr = currStr.substring(currStr.indexOf(' '));
+    let currNum = parseInt(currStr.substring(0,currStr.indexOf(" ")));
+    let restOfStr = currStr.substring(currStr.indexOf(" "));
     document.getElementById(itemName).innerText = ++currNum + restOfStr;
 
     if (itemName === "num-asked") {   // need to update the progress bar as well for "num-asked"
