@@ -51,6 +51,12 @@ To be written
 
 ### Features which could be implemented in the future
 
+- __Store user scores__
+    - Currently the user is asked to enter a username but that is only used to display the name on screen.  Functionality could be added to upload results for that user to a website so it could be compared against other player results or the user could use it to try to beat their own high-score.
+
+- __Extend Topic selection functionality__
+    - A maximum of 4 topic titles are listed on the topics screen.  Functionality could be added so that if more than 4 titles were available in the quiz data structure then either a random selection of 4 titles could be picked, or all available titles could be presented to the user to choose from.
+
 - __To be written__
     - To be written
 
