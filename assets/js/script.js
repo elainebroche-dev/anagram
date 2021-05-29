@@ -72,8 +72,7 @@ function runLogin() {
  * initialise list of topics and show the user the topic screen
  */
 function runTopics() {
-    showPanel("topic-panel");
-    
+    showPanel("topic-panel"); 
 }
 
 /**
@@ -88,6 +87,26 @@ function runGame() {
  * show the user the result
  */
 function runEndGame() {
+    let currStr = document.getElementById("num-correct").innerText;
+    let numCorrect = parseInt(currStr.substring(0,currStr.indexOf(' ')));
+
+    let msgStr = "";
+    switch(true) {
+        case (numCorrect < 3) :
+            msgStr = "Aw, they didn't really suit you";
+            break;
+        case (numCorrect <= 5) :
+            msgStr = "Better luck next time"
+            break;
+        case (numCorrect <= 9) :
+            msgStr = "That's impressive !"
+            break;
+        case (numCorrect == 10) :
+            msgStr = "Congratulations !"
+            break;
+    }
+    document.getElementById("result-text").innerText = numCorrect + " out of 10";
+    document.getElementById("result-msg").innerText = msgStr;
     showPanel("end-panel");
 }
 
