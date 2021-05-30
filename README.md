@@ -171,6 +171,8 @@ to be written
 - Code to help parse strings came from information on this website : [Substring Example](https://stackoverflow.com/questions/10272773/split-string-on-the-first-white-space-occurrence/10272822)
 - Code to check a range in a switch statement came from information on this website : [Switch Range](https://www.codegrepper.com/code-examples/javascript/javascript+switch+case+range)
 - Code on how to use map to index into object array came from information on this website : [Map IndexOf](https://stackoverflow.com/questions/8668174/indexof-method-in-an-object-array)
+- Code to create an array of unique random numbers came from information on this website : [Unique Random](https://stackoverflow.com/questions/2380019/generate-unique-random-numbers-between-1-and-100)
+- Code to create random numbers within a specified min/max range came from information on this website : [Random Range](https://stackoverflow.com/questions/4959975/generate-random-number-between-two-numbers-in-javascript)
 
 ### Media 
 - To be written : The fonts used were imported from [Google Fonts](https://fonts.google.com/)

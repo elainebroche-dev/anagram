@@ -1,3 +1,6 @@
+// global variable to hold the topic qustions for the current round
+let thisRound = [];
+
 // Wait for the DOM to finish loading then add listeners
 document.addEventListener("DOMContentLoaded", function() {
 
@@ -20,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     // handle interactions on the main game panel
-    document.getElementById("check-answer").addEventListener("click",checkAnswer);
+    document.getElementById("game-button").addEventListener("click",handleGameButton);
 
     // handle interactions on the end panel
     document.getElementById("play-again").addEventListener("click",runTopics);
@@ -32,8 +35,6 @@ document.addEventListener("DOMContentLoaded", function() {
     // kick off the login
     runLogin();
 })
-
-let randNums = [];
 
 /**
  * Put the names of the topics on the 4 topic buttons 
@@ -96,24 +97,21 @@ function runTopics() {
  * initialise a new round of the game and show the user the game screen
  */
 function runGame(topicTitle) {
+    // initialize the elements on the panel to start the new round
     document.getElementById("topic-title").innerText = topicTitle;
     document.getElementById("num-asked").innerText = "1 of 10";
     document.getElementById("num-correct").innerText = "0 correct answers";
     document.getElementById("progress").style.width = "10%";
-    document.getElementById("check-answer").innerText = "Check Answer"
+    document.getElementById("game-button").innerText = "Check Answer"
 
     // get the index of the topic so that it can be used when accessing the quiz data structure
-    console.log(document.getElementById("topic-title").innerText);
-
     let topicNumber = quiz.map(function(e) { return e.topicTitle; }).indexOf(document.getElementById("topic-title").innerText);
-    console.log(topicNumber);
-
-    // build a random array of question numbers for the current topic
-    randNums = getQuestionList(topicNumber);
-
+    
+    // build the array of questions for the round 
+    buildThisRound(topicNumber);
+    
     // display the first question
-    document.getElementById("word-display").innerText = quiz[topicNumber].questions[randNums[0]].question;
-
+    document.getElementById("word-display").innerText = thisRound.pop();
     showPanel("game-panel");
 }
 
@@ -138,6 +136,9 @@ function runEndGame() {
         case (numCorrect == 10) :
             msgStr = "Congratulations !"
             break;
+        default :
+            alert(`Error checking num correct answers: ${numCorrect}`);
+            throw `Error checking num correct answers: ${numCorrect}. Aborting`;
     }
     document.getElementById("result-text").innerText = numCorrect + " out of 10";
     document.getElementById("result-msg").innerText = msgStr;
@@ -165,40 +166,81 @@ function runEndGame() {
 }
 
 /**
- * return an array of 10 question numbers
+ * build an array of 10 questions 
  */
-function getQuestionList(topicNumber) {
-    let questions = [2,7,8,3,4,11,19,0,6,12];
-    return questions;
+function buildThisRound(topicNumber) {
+    // build an array of 10 unique random numbers between 0 and (the number of questions available for the 
+    // current topic) - 1      .... because the topics may have differing numbers of questions
+    arr = [];
+    while(arr.length < 10){
+        let r = randomIntFromInterval(0,quiz[topicNumber].questions.length-1);
+        if(arr.indexOf(r) === -1) arr.push(r);
+    }
+
+    // now build the array of questions used those question indices
+    thisRound = [];
+    while(arr.length > 0) {
+        thisRound.push(quiz[topicNumber].questions[arr.pop()].question);
+    }
 }
+
+function randomIntFromInterval(min, max) { // min and max included 
+    return Math.floor(Math.random() * (max - min + 1) + min)
+}
+
+/**
+ * decide on how to handle the button click on the main game panel depending on state
+ */
+function handleGameButton() {
+
+    let currState = document.getElementById("game-button").innerText;
+    switch (true) {
+        case(currState === "End Round") :
+            runEndGame();
+            break;
+        case(currState === "Continue") :
+            askNextQuestion();
+            break;
+        case(currState == "Check Answer") :
+            checkAnswer();
+            break;
+        default :
+            alert(`Unknown button click: ${currState}`);
+            throw `Unknown button click: ${currState}. Aborting`;
+    }
+}
+
 /**
  * check the answer entered by the user, give feedback, update scores move to next question
  */
 function checkAnswer() {
-    if (document.getElementById("check-answer").innerText === "End Round") {
-        runEndGame(); 
+    let isCorrect = true;  // this line is temporary
+
+    if (isCorrect) {
+        console.log("answer is correct");
+        incCounter("num-correct");
     }
     else {
-
-        let isCorrect = true;  // this line is temporary
-
-        if (isCorrect) {
-            console.log("answer is correct");
-            incCounter("num-correct");
-        }
-        else {
-            console.log("answer is wrong")
-        }
-
-        
-        let questionsAsked = parseInt(document.getElementById("num-asked").innerText.substring(0,document.getElementById("num-asked").innerText.indexOf(' ')));
-        if (questionsAsked < 10) {
-            incCounter("num-asked");
-            console.log("ask another question");
-        } else {
-            document.getElementById("check-answer").innerText = "End Round";
-        }
+        console.log("answer is wrong")
     }
+  
+    let questionsAsked = parseInt(document.getElementById("num-asked").innerText.substring(0,document.getElementById("num-asked").innerText.indexOf(' ')));
+    if (questionsAsked < 10) {
+        document.getElementById("game-button").innerText = "Continue";
+    } else {
+        document.getElementById("game-button").innerText = "End Round";
+    }
+}
+
+/** 
+ * after the user has reviewed the feedback and clicked the Continue, move on to the next question
+ */
+function askNextQuestion() {
+    let topicNumber = quiz.map(function(e) { return e.topicTitle; }).indexOf(document.getElementById("topic-title").innerText);
+    let currNum = incCounter("num-asked");
+    document.getElementById("progress").style.width = currNum * 10 + "%";
+    document.getElementById("word-display").innerText = thisRound.pop();
+    document.getElementById("game-button").innerText = "Check Answer";
 }
 
 /**
@@ -209,9 +251,6 @@ function incCounter(itemName) {
     let currNum = parseInt(currStr.substring(0,currStr.indexOf(" ")));
     let restOfStr = currStr.substring(currStr.indexOf(" "));
     document.getElementById(itemName).innerText = ++currNum + restOfStr;
-
-    if (itemName === "num-asked") {   // need to update the progress bar as well for "num-asked"
-        document.getElementById("progress").style.width = currNum * 10 + "%"; 
-    }
+    return currNum;
 }
 
