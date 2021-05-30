@@ -55,6 +55,7 @@ function loadTopics() {
  * if the exit button is clicked move back - close the window if x is clicked on the login screen
  */
 function exit() {
+    clearInterval(timer);  // stop the timer
     let panels = document.getElementsByClassName("panel");
     for (let panel of panels) {
         if (panel.style.display === "block") {
@@ -102,22 +103,20 @@ function runTopics() {
 function runGame(topicTitle) {
     // initialize the elements on the panel to start the new round
     document.getElementById("topic-title").innerText = topicTitle;
-    document.getElementById("response-icon").style.visibility = "hidden";
-    document.getElementById("num-asked").innerText = "1 of 10";
+    document.getElementById("num-asked").innerText = "0 of 10";
     document.getElementById("num-correct").innerText = "0 correct answers";
-    document.getElementById("progress").style.width = "10%";
-    document.getElementById("game-button").innerText = "Check Answer"
-
+    
     // get the index of the topic so that it can be used when accessing the quiz data structure
     let topicNumber = quiz.map(function(e) { return e.topicTitle; }).indexOf(document.getElementById("topic-title").innerText);
     
     // build the array of questions for the round 
     buildThisRound(topicNumber);
-    
-    // display the first question
-    document.getElementById("word-display").innerText = thisRoundQuestions.pop();
+
+    // show the panel
     showPanel("game-panel");
-    startTimer();
+
+    // initialize the elements on the panel to start a new question
+    askNextQuestion(); 
 }
 
 /**
@@ -227,21 +226,23 @@ function checkAnswer() {
     // stop the timer
     clearInterval(timer);
 
-    let isCorrect = randomIntFromInterval(0,1);  // this line is temporary
+    //let isCorrect = randomIntFromInterval(0,1);  // this line is temporary
     
+    
+
     document.getElementById("word-display").innerText = thisRoundAnswers.pop();
     let icon = document.getElementById("response-icon");
     if (isCorrect) {
         console.log("answer is correct");
         incCounter("num-correct");
         icon.classList.add("fa-check-circle");
-        icon.classList.remove("fa-times-circle");
+        icon.classList.remove("fa-times-circle","fa-clock");
         document.getElementById("answer").style.background = "#8acc84";
     }
     else {
         console.log("answer is wrong")
         icon.classList.add("fa-times-circle");
-        icon.classList.remove("fa-check-circle");
+        icon.classList.remove("fa-check-circle","fa-clock");
         document.getElementById("answer").style.background = "#ec5959";
     }
     document.getElementById("response-icon").style.visibility = "visible";
@@ -251,17 +252,17 @@ function checkAnswer() {
 }
 
 /** 
- * after the user has reviewed the feedback and clicked the Continue, move on to the next question
+ * move on to the next question - initalize answer field, progress bar, question, action button and response icon 
  */
 function askNextQuestion() {
-    let topicNumber = quiz.map(function(e) { return e.topicTitle; }).indexOf(document.getElementById("topic-title").innerText);
     let currNum = incCounter("num-asked");
     document.getElementById("answer").style.background = "white";
     document.getElementById("answer").value = "";
-    document.getElementById("response-icon").style.visibility = "hidden";
     document.getElementById("progress").style.width = currNum * 10 + "%";
     document.getElementById("word-display").innerText = thisRoundQuestions.pop();
     document.getElementById("game-button").innerText = "Check Answer";
+    document.getElementById("response-icon").classList.add("fa-clock");
+    document.getElementById("response-icon").classList.remove("fa-times-circle","fa-check-circle");
     startTimer();
 }
 
@@ -276,7 +277,6 @@ function incCounter(itemName) {
     return currNum;
 }
 
-var i = 0;
 /**
  * initialize the timer bar and kick off the countdown interval
  */
@@ -287,12 +287,10 @@ function startTimer() {
     timer = setInterval(frame, 25);
     function frame() {
         if (width <= 0) {
-            elem.style.width = "0%";
-            clearInterval(timer);
             checkAnswer();
         } else {
             width--;
-            elem.style.width = (width/24) + "%";
+            elem.style.width = (width/24).toFixed(2) + "%";
         }
     }
 } 
