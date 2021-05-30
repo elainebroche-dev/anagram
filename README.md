@@ -174,6 +174,7 @@ to be written
 - Code to create an array of unique random numbers came from information on this website : [Unique Random](https://stackoverflow.com/questions/2380019/generate-unique-random-numbers-between-1-and-100)
 - Code to create random numbers within a specified min/max range came from information on this website : [Random Range](https://stackoverflow.com/questions/4959975/generate-random-number-between-two-numbers-in-javascript)
 - Code to create the timer progress bar came from information on this website : [Timer Bar](https://www.w3schools.com/howto/howto_js_progressbar.asp)
+- Code to replace multiple whitespace characters with a single space came from information on this website : [Replace Whitespace](https://stackoverflow.com/questions/1981349/regex-to-replace-multiple-spaces-with-a-single-space)
 
 ### Media 
 - To be written : The fonts used were imported from [Google Fonts](https://fonts.google.com/)

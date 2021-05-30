@@ -145,9 +145,8 @@ body {
 }
 
 .user-input textarea {
-	padding: 0.5rem 0.3rem;
+	padding: 1rem 0.3rem;
 	width: 30.625rem;
-	text-align : left;
 }
 
 .user-message {
@@ -226,15 +225,15 @@ body {
     border-radius: 1rem;
     margin: 0.8rem 0;
     text-align: left;
-  }
+}
   
-  #num-asked {
-      float:left;
-  }
+#num-asked {
+    float:left;
+}
   
-  #num-correct {
-      float:right;
-  }
+#num-correct {
+    float:right;
+}
 
 /* styling for the 'end of round' panel */
 #end-panel {

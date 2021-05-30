@@ -226,11 +226,9 @@ function checkAnswer() {
     // stop the timer
     clearInterval(timer);
 
-    //let isCorrect = randomIntFromInterval(0,1);  // this line is temporary
-    
-    
-
-    document.getElementById("word-display").innerText = thisRoundAnswers.pop();
+    let answer = thisRoundAnswers.pop();
+    document.getElementById("word-display").innerText = answer;
+    let isCorrect = stringsMatch(answer,document.getElementById("answer").value);
     let icon = document.getElementById("response-icon");
     if (isCorrect) {
         console.log("answer is correct");
@@ -251,6 +249,16 @@ function checkAnswer() {
     (questionsAsked < 10) ? document.getElementById("game-button").innerText = "Continue" : document.getElementById("game-button").innerText = "End Round";
 }
 
+/**
+ * clean up the input strings and compare them - return true if they match, otherwise false.
+ */
+function stringsMatch(str1, str2) {
+    // replace multiple whitespace chars with a single space
+    str1 = str1.replace(/\s\s+/g, ' ').trim().toUpperCase();
+    str2 = str2.replace(/\s\s+/g, ' ').trim().toUpperCase();
+    return (str1 === str2) ? true : false;
+}
+
 /** 
  * move on to the next question - initalize answer field, progress bar, question, action button and response icon 
  */
@@ -260,10 +268,12 @@ function askNextQuestion() {
     document.getElementById("answer").value = "";
     document.getElementById("progress").style.width = currNum * 10 + "%";
     document.getElementById("word-display").innerText = thisRoundQuestions.pop();
+    document.getElementById("word-display").innerText = document.getElementById("word-display").innerText + document.getElementById("word-display").innerText;
     document.getElementById("game-button").innerText = "Check Answer";
     document.getElementById("response-icon").classList.add("fa-clock");
     document.getElementById("response-icon").classList.remove("fa-times-circle","fa-check-circle");
     startTimer();
+    document.getElementById("answer").focus();
 }
 
 /**
