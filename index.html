@@ -18,8 +18,8 @@
     </header> 
     <div id="main-panel">
 
-      <div class="top-line">
-            <button id="exit"><i class="fas fa-times"</i></i></button>
+        <div class="top-line">
+            <button id="exit"><i class="fas fa-times"></i></button>
             <i class="fas fa-user-circle user-icon"></i>
 		    <p id="username" ></p>
         </div>
@@ -45,6 +45,7 @@
 
         <section class="panel" id="game-panel">
             <div class="status-bar">
+                <i class="fas fa-clock"></i>
                 <div id="timer"></div>
             </div>
             <p class="info-text" id="topic-title">TOPIC TITLE</p>
@@ -53,8 +54,7 @@
                 <label for="answer">Your Answer</label>
                 <textarea id="answer" name="answer" maxlength="100"></textarea>
                 <div id="result">
-                    <i class="fas fa-check-circle"></i>
-                    <i class="fas fa-times-circle"></i>
+                    <i class="fas fa-check-circle" id="response-icon"></i>
                 </div>
             </div>
             <button class="button" id="game-button">Check Answer</button>

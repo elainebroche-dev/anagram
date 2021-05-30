@@ -216,8 +216,8 @@ body {
 }
 
 #result {
-	font-size:2em;
-	padding-top : 1.25rem;	
+	font-size:3em;
+	padding-top : 0.75rem;	
 }
 
 #progress {
@@ -251,6 +251,7 @@ body {
 @media screen and (max-width: 540px) {
     #main-panel {
         width: 17.5rem;
+        height: 38.5rem;
         padding: 0.625rem;
     }
 

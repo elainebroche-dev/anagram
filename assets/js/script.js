@@ -1,5 +1,7 @@
 // global variable to hold the topic qustions for the current round
-let thisRound = [];
+let thisRoundQuestions = [];
+let thisRoundAnswers = [];
+let timer;
 
 // Wait for the DOM to finish loading then add listeners
 document.addEventListener("DOMContentLoaded", function() {
@@ -29,7 +31,7 @@ document.addEventListener("DOMContentLoaded", function() {
     document.getElementById("play-again").addEventListener("click",runTopics);
     document.getElementById("end-game").addEventListener("click",runLogin);
 
-    // set up the topic list
+    // set up the topic buttons
     loadTopics();
 
     // kick off the login
@@ -39,7 +41,7 @@ document.addEventListener("DOMContentLoaded", function() {
 /**
  * Put the names of the topics on the 4 topic buttons 
  * if less than 4 topics are available - the number of topic buttons visible will match the number of topics loaded
- * - this function be extended later to choose 4 topics at random if more data was available in the quiz data structure
+ * - this function could be extended later to choose 4 topics at random if more data was available in the quiz data structure
  */
 function loadTopics() {
     let topics = document.getElementsByClassName("topic-btn");
@@ -48,6 +50,7 @@ function loadTopics() {
         topics[i].style.display = "inline";
     }
 }
+
 /**
  * if the exit button is clicked move back - close the window if x is clicked on the login screen
  */
@@ -99,6 +102,7 @@ function runTopics() {
 function runGame(topicTitle) {
     // initialize the elements on the panel to start the new round
     document.getElementById("topic-title").innerText = topicTitle;
+    document.getElementById("response-icon").style.visibility = "hidden";
     document.getElementById("num-asked").innerText = "1 of 10";
     document.getElementById("num-correct").innerText = "0 correct answers";
     document.getElementById("progress").style.width = "10%";
@@ -111,12 +115,13 @@ function runGame(topicTitle) {
     buildThisRound(topicNumber);
     
     // display the first question
-    document.getElementById("word-display").innerText = thisRound.pop();
+    document.getElementById("word-display").innerText = thisRoundQuestions.pop();
     showPanel("game-panel");
+    startTimer();
 }
 
 /**
- * show the user the result
+ * show the user the result of the round and let them choose to play again or exit
  */
 function runEndGame() {
     let currStr = document.getElementById("num-correct").innerText;
@@ -166,7 +171,7 @@ function runEndGame() {
 }
 
 /**
- * build an array of 10 questions 
+ * build an array of 10 questions randomly picked from the the questions available for the topic
  */
 function buildThisRound(topicNumber) {
     // build an array of 10 unique random numbers between 0 and (the number of questions available for the 
@@ -178,13 +183,18 @@ function buildThisRound(topicNumber) {
     }
 
     // now build the array of questions used those question indices
-    thisRound = [];
-    while(arr.length > 0) {
-        thisRound.push(quiz[topicNumber].questions[arr.pop()].question);
+    thisRoundQuestions = [];
+    thisRoundAnswers = [];
+    for (let i = 0; i < arr.length; i++) {
+        thisRoundQuestions.push(quiz[topicNumber].questions[arr[i]].question);
+        thisRoundAnswers.push(quiz[topicNumber].questions[arr[i]].answer);
     }
 }
 
-function randomIntFromInterval(min, max) { // min and max included 
+/** 
+ * generate a random number between min and max (inclusive)
+ */
+function randomIntFromInterval(min, max) { 
     return Math.floor(Math.random() * (max - min + 1) + min)
 }
 
@@ -211,25 +221,33 @@ function handleGameButton() {
 }
 
 /**
- * check the answer entered by the user, give feedback, update scores move to next question
+ * check the answer entered by the user and give feedback
  */
 function checkAnswer() {
-    let isCorrect = true;  // this line is temporary
+    // stop the timer
+    clearInterval(timer);
 
+    let isCorrect = randomIntFromInterval(0,1);  // this line is temporary
+    
+    document.getElementById("word-display").innerText = thisRoundAnswers.pop();
+    let icon = document.getElementById("response-icon");
     if (isCorrect) {
         console.log("answer is correct");
         incCounter("num-correct");
+        icon.classList.add("fa-check-circle");
+        icon.classList.remove("fa-times-circle");
+        document.getElementById("answer").style.background = "#8acc84";
     }
     else {
         console.log("answer is wrong")
+        icon.classList.add("fa-times-circle");
+        icon.classList.remove("fa-check-circle");
+        document.getElementById("answer").style.background = "#ec5959";
     }
+    document.getElementById("response-icon").style.visibility = "visible";
   
     let questionsAsked = parseInt(document.getElementById("num-asked").innerText.substring(0,document.getElementById("num-asked").innerText.indexOf(' ')));
-    if (questionsAsked < 10) {
-        document.getElementById("game-button").innerText = "Continue";
-    } else {
-        document.getElementById("game-button").innerText = "End Round";
-    }
+    (questionsAsked < 10) ? document.getElementById("game-button").innerText = "Continue" : document.getElementById("game-button").innerText = "End Round";
 }
 
 /** 
@@ -238,9 +256,13 @@ function checkAnswer() {
 function askNextQuestion() {
     let topicNumber = quiz.map(function(e) { return e.topicTitle; }).indexOf(document.getElementById("topic-title").innerText);
     let currNum = incCounter("num-asked");
+    document.getElementById("answer").style.background = "white";
+    document.getElementById("answer").value = "";
+    document.getElementById("response-icon").style.visibility = "hidden";
     document.getElementById("progress").style.width = currNum * 10 + "%";
-    document.getElementById("word-display").innerText = thisRound.pop();
+    document.getElementById("word-display").innerText = thisRoundQuestions.pop();
     document.getElementById("game-button").innerText = "Check Answer";
+    startTimer();
 }
 
 /**
@@ -254,3 +276,23 @@ function incCounter(itemName) {
     return currNum;
 }
 
+var i = 0;
+/**
+ * initialize the timer bar and kick off the countdown interval
+ */
+function startTimer() {
+    let elem = document.getElementById("timer");
+    elem.style.width = "100%";
+    let width = 2400;
+    timer = setInterval(frame, 25);
+    function frame() {
+        if (width <= 0) {
+            elem.style.width = "0%";
+            clearInterval(timer);
+            checkAnswer();
+        } else {
+            width--;
+            elem.style.width = (width/24) + "%";
+        }
+    }
+} 
