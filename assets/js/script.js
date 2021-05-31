@@ -231,14 +231,12 @@ function checkAnswer() {
     let isCorrect = stringsMatch(answer,document.getElementById("answer").value);
     let icon = document.getElementById("response-icon");
     if (isCorrect) {
-        console.log("answer is correct");
         incCounter("num-correct");
         icon.classList.add("fa-check-circle");
         icon.classList.remove("fa-times-circle","fa-clock");
         document.getElementById("answer").style.background = "#8acc84";
     }
     else {
-        console.log("answer is wrong")
         icon.classList.add("fa-times-circle");
         icon.classList.remove("fa-check-circle","fa-clock");
         document.getElementById("answer").style.background = "#ec5959";
@@ -268,10 +266,10 @@ function askNextQuestion() {
     document.getElementById("answer").value = "";
     document.getElementById("progress").style.width = currNum * 10 + "%";
     document.getElementById("word-display").innerText = thisRoundQuestions.pop();
-    document.getElementById("word-display").innerText = document.getElementById("word-display").innerText + document.getElementById("word-display").innerText;
     document.getElementById("game-button").innerText = "Check Answer";
     document.getElementById("response-icon").classList.add("fa-clock");
     document.getElementById("response-icon").classList.remove("fa-times-circle","fa-check-circle");
+    document.getElementById("word-display").innerText = "Dog Kick Ball Into Rim";
     startTimer();
     document.getElementById("answer").focus();
 }
