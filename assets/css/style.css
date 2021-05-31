@@ -1,15 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Questrial&display=swap');
 
 :root {
-    --midgrey : #3a3a3a;
-    --panel-grey : rgba(60, 60, 60, 0.9);
+    --midgrey: #3a3a3a;
+    --panel-grey: rgba(60, 60, 60, 0.9);
     --offwhite: #fafafa;
     --border-orange: #bd5907;
     --button-orange: #f38429;
     --bg-orange: #f57309;
     --msg-text: gold;
-    --question-text : black;
- }
+    --question-text: black;
+}
 
 * {
     margin: 0;
@@ -24,47 +24,48 @@ body {
 }
 
 #background-image {
-    position: fixed; 
-    top: -50%; 
-    left: -50%; 
-    width: 200%; 
+    position: fixed;
+    top: -50%;
+    left: -50%;
+    width: 200%;
     height: 200%;
-  }
+}
 
-  #background-image img {
-    position: absolute; 
-    top: 0; 
-    left: 0; 
-    right: 0; 
-    bottom: 0; 
-    margin: auto; 
+#background-image img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
     min-width: 50%;
     min-height: 50%;
-    
+
     /* animates zoom effect on loading page */
     animation-name: game-image-zoom;
     animation-duration: 5s;
     animation-fill-mode: forwards;
-  }
-  
-  /* creates the level of zoom for hero image */
-  @keyframes game-image-zoom {
-      from {
-          transform: scale(1);
-      }
-      to {
-          transform: scale(1.1);
-      }
-  }
-  
+}
+
+/* creates the level of zoom for hero image */
+@keyframes game-image-zoom {
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(1.1);
+    }
+}
+
 #main-panel {
-	width: 31.25rem;
-	height: 37.5rem;
-	background-color : var(--panel-grey);
-	position: absolute;
+    width: 31.25rem;
+    height: 37.5rem;
+    background-color: var(--panel-grey);
+    position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
     padding: 1rem 1.5rem 0.5rem;
     text-align: center;
     color: var(--offwhite);
@@ -72,37 +73,38 @@ body {
 }
 
 .top-line {
-	line-height:1.875rem;
+    line-height: 1.875rem;
 }
 
 .top-line p {
-	float: right;
-	padding-top: 0.25rem;
-	padding-right: 0.5rem;
+    float: right;
+    padding-top: 0.25rem;
+    padding-right: 0.5rem;
 }
 
 #exit {
-	float: left;
-	font-size:150%;
-	background-color: transparent;
-	color : var(--offwhite);
-	padding-top: 0.3rem;
+    float: left;
+    font-size: 150%;
+    background-color: transparent;
+    color: var(--offwhite);
+    padding-top: 0.3rem;
 }
+
 .user-icon {
-	font-size:220%; 
-	float:right;
+    font-size: 220%;
+    float: right;
 }
 
 #username {
-	font-weight: 200;
-	font-size: 90%;
+    font-weight: 200;
+    font-size: 90%;
     text-transform: none;
 }
 
 .info-text {
-	padding: 2rem;
-	letter-spacing: 0.125rem; 
-	font-size: 1.8em; 
+    padding: 2rem;
+    letter-spacing: 0.125rem;
+    font-size: 1.8em;
 }
 
 .button {
@@ -115,24 +117,26 @@ body {
     width: 17.5rem;
     border-radius: 11px;
     border-bottom: 4px solid var(--border-orange);
- }
- 
- .button:hover {
+}
+
+.button:hover {
     background-color: var(--button-orange);
- }
- 
- .button:active {
-   background-color: var(--button-orange);
-   border-bottom: 4px solid transparent;
-   transform: translateY(4px);
- }
- 
- .user-input input, .user-input label, .user-input textarea {
-	font-size: 150%;
-	font-family: Questrial, sans-serif;
-	text-align : center;
-	margin: 0.5rem auto;
-	border-radius:0.3rem;
+}
+
+.button:active {
+    background-color: var(--button-orange);
+    border-bottom: 4px solid transparent;
+    transform: translateY(4px);
+}
+
+.user-input input,
+.user-input label,
+.user-input textarea {
+    font-size: 150%;
+    font-family: Questrial, sans-serif;
+    text-align: center;
+    margin: 0.5rem auto;
+    border-radius: 0.3rem;
 }
 
 .user-input p {
@@ -140,39 +144,39 @@ body {
 }
 
 .user-input input {
-	padding: 1.5rem 0;
-	width: 26rem;
+    padding: 1.5rem 0;
+    width: 26rem;
 }
 
 .user-input textarea {
-	padding: 1rem 0.3rem;
-	width: 30.625rem;
+    padding: 1rem 0.3rem;
+    width: 30.625rem;
 }
 
 .user-message {
-    padding:2rem;
+    padding: 2rem;
     color: var(--msg-text);
 }
 
 /* styling for the login panel */
 #login-panel {
-    display:none;
+    display: none;
     padding-top: 8rem;
 }
 
 #user {
-	border-radius:0.3rem;
-	padding: 0.8rem 0;
+    border-radius: 0.3rem;
+    padding: 0.8rem 0;
 }
- 
+
 #message-1 {
-    display:none;
+    display: none;
 }
 
 /* styling for the 'choose topic' panel */
 #topic-panel {
-    display:none;
-    clear:both;
+    display: none;
+    clear: both;
     padding-top: 4rem;
 }
 
@@ -181,17 +185,17 @@ body {
 }
 
 #topic-index {
-    display:none;
+    display: none;
 }
 
 /* styling for the game playing panel */
 #game-panel {
-    display:none;
+    display: none;
     clear: both;
 }
 
 .status-bar {
-	padding-top: 1.4rem;
+    padding-top: 1.4rem;
     width: 100%;
     border-radius: 16px;
 }
@@ -201,16 +205,16 @@ body {
     height: 0.625rem;
     background-color: var(--bg-orange);
     border-radius: 1rem;
-  }
+}
 
 #word-display {
-	margin: 0 auto 2rem;
-	background-color: var(--offwhite);
-	position: relative;
-	color: var(--question-text);
-	font-size: 150%;
-	padding: 1rem 0.3rem;
-	border-radius:0.3rem;
+    margin: 0 auto 2rem;
+    background-color: var(--offwhite);
+    position: relative;
+    color: var(--question-text);
+    font-size: 150%;
+    padding: 1rem 0.3rem;
+    border-radius: 0.3rem;
     display: flex;
     justify-content: center;
     align-content: center;
@@ -219,8 +223,8 @@ body {
 
 
 #result {
-	font-size:3em;
-	padding-top : 0.75rem;	
+    font-size: 3em;
+    padding-top: 0.75rem;
 }
 
 #progress {
@@ -231,23 +235,23 @@ body {
     margin: 0.8rem 0;
     text-align: left;
 }
-  
+
 #num-asked {
-    float:left;
+    float: left;
 }
-  
+
 #num-correct {
-    float:right;
+    float: right;
 }
 
 /* styling for the 'end of round' panel */
 #end-panel {
-    display:none;
+    display: none;
     padding-top: 8rem;
 }
 
 #result-text {
-	font-size:140%;
+    font-size: 140%;
 }
 
 /* For small screens sizes from 510px wide and down */
@@ -259,16 +263,16 @@ body {
     }
 
     .user-input input {
-		width: 17.5rem;
-	}
-	
-	.user-input textarea {
-		width: 16.875rem;
-	}
+        width: 17.5rem;
+    }
 
-	#word-display {
+    .user-input textarea {
+        width: 16.875rem;
+    }
+
+    #word-display {
         height: 3.125rem;
-	}
+    }
 
     #into-text {
         height: 3.75rem;
