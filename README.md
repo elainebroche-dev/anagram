@@ -160,7 +160,7 @@ to be written
 ## Credits 
 
 ### Content 
-- The anagrams were sourced from a mixture of the below websites :
+- The anagrams were sourced from a mixture of gthe below websites :
     - [Source 1](https://www.sporcle.com/games/)
     - [Source 2](https://readymadepubquiz.com/tag/anagrams/)
     - [Source 3](https://www.bibliofreak.net/2015/06/anagrams-004-famous-authors.html)
@@ -186,9 +186,8 @@ to be written
 - To be wrritten : The icons xxxxxx were taken from [Font Awesome](https://fontawesome.com/)
 
 
-- All images were downloaded from [Unsplash](https://unsplash.com) :
-
-    - Background photo by <a href="https://unsplash.com/@ripato?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Ricardo Gomez Angel</a> on <a href="https://unsplash.com/photos/5YM26lUicfU">Unsplash</a>
+- Background photo by <a href="https://unsplash.com/@ripato?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Ricardo Gomez Angel</a> on <a href="https://unsplash.com/photos/5YM26lUicfU">Unsplash</a>
+- The favicon was created from the "exchange" icon image on [Font Awesome](https://fontawesome.com/)
 
 
   
