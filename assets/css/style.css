@@ -82,13 +82,13 @@ body {
     height: 37.5rem;
 
     box-sizing: border-box;
-    width: 90%;
+    width: 95%;
     height: 100vh;
     max-height: 37.5rem;
     max-width: 31.25rem;
     margin-left: auto;
     margin-right: auto;
-    padding: 1%;
+    padding: 2%;
 }
 
 .top-line {
@@ -162,14 +162,10 @@ body {
     text-transform: lowercase;
 }
 
-.user-input input {
-    padding: 1.5rem 0;
-    width: 26rem;
-}
 
-.user-input textarea {
+.user-input #sanswer {
     padding: 1rem 0.3rem;
-    width: 30.625rem;
+    width: 28.5rem;
 }
 
 .user-message {
@@ -180,7 +176,7 @@ body {
 /* styling for the login panel */
 #login-panel {
     display: none;
-    padding-top: 4rem;
+    padding-top: 6rem;
 }
 
 #user {
@@ -240,6 +236,19 @@ body {
     flex-direction: column;
 }
 
+#answer {
+    position: relative;
+    font-size: 150%;
+    padding: 1rem 0.3rem;
+    border-radius: 0.3rem;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    min-width: 0;
+    width:97%;
+}
+
 
 #result {
     font-size: 3em;
@@ -275,30 +284,16 @@ body {
 
 /* For small screens sizes from 510px wide and down */
 @media screen and (max-width: 540px) {
-    #smain-panel {
-        width: 17.5rem;
-        height: 40.5rem;
-        padding: 0.625rem;
+
+    * {
+        font-size: 90%;
     }
 
-    #main-panel {
-        font-size: 80%;
+    .button {
+        font-size: 1rem;
     }
 
-    .user-input input {
-        width: 17.5rem;
-    }
-
-    .user-input textarea {
-        width: 16.875rem;
-    }
-
-    #word-display {
-        height: 3.125rem;
-    }
-
-    #into-text {
-        height: 3.75rem;
+    .info-text {
         font-size : 1.4rem;
     }
 
