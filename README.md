@@ -160,14 +160,14 @@ to be written
 ## Credits 
 
 ### Content 
-- The anagrams were sourced from a the below websites :
+- The anagrams were sourced from a mixture of the below websites :
     - [Source 1](https://www.sporcle.com/games/)
     - [Source 2](https://readymadepubquiz.com/tag/anagrams/)
     - [Source 3](https://www.bibliofreak.net/2015/06/anagrams-004-famous-authors.html)
     - [Source 4](https://www.funtrivia.com/submitquiz.cfm)
     - [Source 5](https://freeology.com/reading/famous-books-anagrams/)
 
-### Code - to be written
+### Code 
 - Code on how to do a full page background came from information on this website : [Full Page Backgound](https://css-tricks.com/perfect-full-page-background-image/ )
 - Code on how to do the fade-in of the background image came from information on this website : [Fade In](https://blog.hubspot.com/website/css-fade-in)
 - Code on how to do the button click effect using a border came from information on this website : [Button Click](https://stackoverflow.com/questions/9612758/add-a-css-border-on-hover-without-moving-the-element)
