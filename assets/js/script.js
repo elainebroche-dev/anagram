@@ -270,7 +270,6 @@ function askNextQuestion() {
   document.getElementById("response-icon").classList.add("fa-clock");
   document.getElementById("response-icon").classList.remove("fa-times-circle", "fa-check-circle");
   startTimer();
-  document.getElementById("answer").focus();
 }
 
 /**
