@@ -270,7 +270,7 @@ body {
 /* styling for the 'end of round' panel */
 #end-panel {
     display: none;
-    padding-top: 8rem;
+    padding-top: 6rem;
 }
 
 #result-text {
