@@ -25,6 +25,11 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // handle interactions on the main game panel
+  document.getElementById("answer").addEventListener("keydown", function (event) {
+    if (event.key === "Enter") {
+      handleGameButton();
+    }
+  })
   document.getElementById("game-button").addEventListener("click", handleGameButton);
 
   // handle interactions on the end panel
