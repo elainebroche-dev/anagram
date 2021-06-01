@@ -91,10 +91,10 @@ body {
     height: 37.5rem;
 
     box-sizing: border-box;
-    /*width: 85%;*/
-    /*height: 65vh;*/
-    /*max-height: 450px;
-    max-width: 830px;*/
+    width: 85%;
+    height: 65vh;
+    max-height: 450px;
+    max-width: 830px;
     margin-left: auto;
     margin-right: auto;
     padding: 1%;
@@ -284,7 +284,7 @@ body {
 
 /* For small screens sizes from 510px wide and down */
 @media screen and (max-width: 540px) {
-    #main-panel {
+    #smain-panel {
         width: 17.5rem;
         height: 40.5rem;
         padding: 0.625rem;
