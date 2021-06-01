@@ -91,10 +91,10 @@ body {
     height: 37.5rem;
 
     box-sizing: border-box;
-    width: 85%;
-    height: 65vh;
-    max-height: 450px;
-    max-width: 830px;
+    width: 90%;
+    height: 100vh;
+    max-height: 37.5rem;
+    max-width: 31.25rem;
     margin-left: auto;
     margin-right: auto;
     padding: 1%;
