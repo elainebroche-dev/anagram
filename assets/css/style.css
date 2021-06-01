@@ -23,6 +23,16 @@ body {
     color: var(--midgrey);
 }
 
+.heading {
+    text-align: center;
+    font-size: 2.5rem;
+}
+
+.logo {
+    height: 40px;
+    padding-right: 5px;
+}
+
 #background-image {
     position: fixed;
     top: -50%;
@@ -58,7 +68,7 @@ body {
     }
 }
 
-#main-panel {
+#smain-panel {
     width: 31.25rem;
     height: 37.5rem;
     background-color: var(--panel-grey);
@@ -70,6 +80,24 @@ body {
     text-align: center;
     color: var(--offwhite);
     text-transform: uppercase;
+}
+
+#main-panel {
+    background-color: var(--panel-grey);
+    text-align: center;
+    color: var(--offwhite);
+    text-transform: uppercase;
+    width: 31.25rem;
+    height: 37.5rem;
+
+    box-sizing: border-box;
+    /*width: 85%;*/
+    /*height: 65vh;*/
+    /*max-height: 450px;
+    max-width: 830px;*/
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1%;
 }
 
 .top-line {
