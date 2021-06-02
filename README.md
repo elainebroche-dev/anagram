@@ -57,8 +57,8 @@ To be written
 - __Extend Topic selection functionality__
     - A maximum of 4 topic titles are listed on the topics screen.  Functionality could be added so that if more than 4 titles were available in the quiz data structure then either a random selection of 4 titles could be picked, or all available titles could be presented to the user to choose from.
 
-- __To be written__
-    - To be written
+- __Extend error handling__
+    - To be written  basic error error catch/throw added - write more here
 
 ## Design
 

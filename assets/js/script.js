@@ -6,6 +6,17 @@ let timer;
 // Wait for the DOM to finish loading then add listeners
 document.addEventListener("DOMContentLoaded", function () {
 
+  // check that the quiz data is available - this code will throw an error if quiz does not exist or is empty
+  try {
+    if(!quiz.length) {
+      throw `Error trying to access Quiz data. Aborting`;
+    }
+  }
+  catch (error) {
+    alert(`Error trying to access Quiz data`);
+    throw `Error trying to access Quiz data. Aborting`;
+  }
+ 
   document.getElementById("exit").addEventListener("click", exit);
 
   // handle interactions on the login panel
@@ -50,8 +61,7 @@ document.addEventListener("DOMContentLoaded", function () {
  */
 function loadTopics() {
   let topics = document.getElementsByClassName("topic-btn");
-  for (let i = 0;
-    (i < 4) && (i < quiz.length); i++) {
+  for (let i = 0; (i < 4) && (i < quiz.length); i++) {
     topics[i].innerText = quiz[i].topicTitle;
     topics[i].style.display = "inline";
   }
@@ -181,6 +191,13 @@ function checkUser() {
 function buildThisRound(topicNumber) {
   // build an array of 10 unique random numbers between 0 and (the number of questions available for the 
   // current topic) - 1      .... because the topics may have differing numbers of questions
+
+  // first check that at least 10 questions are available to choose from
+  if (quiz[topicNumber].questions.length < 10) {
+    alert(`Error - minimum of 10 questions required.  Only ${quiz[topicNumber].questions.length} questions are available.`);
+    throw `Error - minimum of 10 questions required.  Only ${quiz[topicNumber].questions.length} questions are available. Aborting`;
+  }
+
   arr = [];
   while (arr.length < 10) {
     let r = randomIntFromInterval(0, quiz[topicNumber].questions.length - 1);
