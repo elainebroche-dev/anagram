@@ -1,4 +1,8 @@
-// global variable to hold the topic qustions for the current round
+/* jshint esversion: 6 */
+/* globals self: false */
+/* globals quiz: false */
+
+// variables to hold the topic qustions for the current round
 let thisRoundQuestions = [];
 let thisRoundAnswers = [];
 let timer;
@@ -24,15 +28,13 @@ document.addEventListener("DOMContentLoaded", function () {
     if (event.key === "Enter") {
       checkUser();
     }
-  })
+  });
   document.getElementById("login").addEventListener("click", checkUser);
 
   // handle interactions on the topics panel
   let topics = document.getElementsByClassName("topic-btn");
   for (let topic of topics) {
-    topic.addEventListener("click", function () {
-      runGame(this.innerText);
-    })
+    topic.addEventListener("click", runGame);
   }
 
   // handle interactions on the main game panel
@@ -40,7 +42,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (event.key === "Enter") {
       handleGameButton();
     }
-  })
+  });
   document.getElementById("game-button").addEventListener("click", handleGameButton);
 
   // handle interactions on the end panel
@@ -52,7 +54,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // kick off the login
   runLogin();
-})
+});
 
 /**
  * Put the names of the topics on the 4 topic buttons 
@@ -115,9 +117,9 @@ function runTopics() {
 /**
  * initialise a new round of the game and show the user the game screen
  */
-function runGame(topicTitle) {
+function runGame() {
   // initialize the elements on the panel to start the new round
-  document.getElementById("topic-title").innerText = topicTitle;
+  document.getElementById("topic-title").innerText = this.innerText;
   document.getElementById("num-asked").innerText = "0 of 10";
   document.getElementById("num-correct").innerText = "0 correct answers";
 
@@ -149,13 +151,13 @@ function runEndGame() {
       msgStr = "Aw, they didn't really suit you";
       break;
     case (numCorrect <= 5):
-      msgStr = "Better luck next time"
+      msgStr = "Better luck next time";
       break;
     case (numCorrect <= 9):
-      msgStr = "That's impressive !"
+      msgStr = "That's impressive !";
       break;
     case (numCorrect == 10):
-      msgStr = "Congratulations !"
+      msgStr = "Congratulations !";
       break;
     default:
       alert(`Error checking num correct answers: ${numCorrect}`);
@@ -198,7 +200,7 @@ function buildThisRound(topicNumber) {
     throw `Error - minimum of 10 questions required.  Only ${quiz[topicNumber].questions.length} questions are available. Aborting`;
   }
 
-  arr = [];
+  let arr = [];
   while (arr.length < 10) {
     let r = randomIntFromInterval(0, quiz[topicNumber].questions.length - 1);
     if (arr.indexOf(r) === -1) arr.push(r);
@@ -217,7 +219,7 @@ function buildThisRound(topicNumber) {
  * generate a random number between min and max (inclusive)
  */
 function randomIntFromInterval(min, max) {
-  return Math.floor(Math.random() * (max - min + 1) + min)
+  return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
 /**
@@ -266,7 +268,7 @@ function checkAnswer() {
   document.getElementById("response-icon").style.visibility = "visible";
 
   let questionsAsked = parseInt(document.getElementById("num-asked").innerText.substring(0, document.getElementById("num-asked").innerText.indexOf(' ')));
-  (questionsAsked < 10) ? document.getElementById("game-button").innerText = "Continue": document.getElementById("game-button").innerText = "End Round";
+  document.getElementById("game-button").innerText = (questionsAsked < 10) ? "Continue" : "End Round";
 }
 
 /**
