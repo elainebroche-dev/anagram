@@ -47,6 +47,8 @@ The questions currently available on the website are quite tricky and so probabl
 
     - Normally, navigation through the screens will happen by interacting with the game selection buttons to play the game.  However, there is also an "X" at the top left of each screen to help the user navigate more quickly.  Clicking on the "X" when on the Username/Login screen (1) will close the browser window.  Clicking on the "X" when on the Select Topic screen (2) will end the current game and return the user to the Username/Login screen (1).  Clicking the "X" when on either the Play Game screen (3) or End of Round screen (4) will end the round and return the user to the Select Topic screen (2).
 
+      ![Navigation Shortcut](documentation/to be written)
+
 -   __F02 Capture Username__
 
     - When the website loads the user is asked to enter a username (see screenshot below).  The username needs to be betwen 1 and 15 characters long (inclusive).  The characters should all be alphanumeric - upper or lower case A-Z and digits 0-9.  The code uses a regular expression to validate the input string.  If the user has entered an invalid username then a feedback message is shown on-screen and the user can try again.  Once a valid username is entered the user is taken to the topic selection screen and the username is displayed on the top right beside the user icon until the user chooses to end the game.
