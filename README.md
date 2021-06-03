@@ -45,7 +45,7 @@ The questions currently available on the website are quite tricky and so probabl
         3. Play Game screen
         4. End of Round screen
 
-    Normally, navigation through the screens will happen by interacting with the game selection buttons to play the game.  However, there is also an "X" at the top left of each screen to help the user navigate more quickly.  Clicking on the "X" when on the Username/Login screen (1) will close the browser window.  Clicking on the "X" when on the Select Topic screen (2) will end the current game and return the user to the Username/Login screen (1).  Clicking the "X" when on either the Play Game screen (3) or End of Round screen (4) will end the round and return the user to the Select Topic screen (2).
+    - Normally, navigation through the screens will happen by interacting with the game selection buttons to play the game.  However, there is also an "X" at the top left of each screen to help the user navigate more quickly.  Clicking on the "X" when on the Username/Login screen (1) will close the browser window.  Clicking on the "X" when on the Select Topic screen (2) will end the current game and return the user to the Username/Login screen (1).  Clicking the "X" when on either the Play Game screen (3) or End of Round screen (4) will end the round and return the user to the Select Topic screen (2).
 
 -   __F02 Capture Username__
 
@@ -59,7 +59,7 @@ The questions currently available on the website are quite tricky and so probabl
 
       ![Choose Topic](documentation/to be written)
 
--   __F04 Ask User a round of 10 Anagrams to solve (Play Game screen)__
+-   __F04 Play a round of 10 anagrams (Play Game screen)__
 
     - Once the user has selected a topic the main game screen is shown.  There are a number of features on this screen, most are detailed in separate feature paragraphs below.  At a high level, this screen screen behaves as follows :
         1. The username and selected Topic Title are displayed on screen.
@@ -127,7 +127,7 @@ The questions currently available on the website are quite tricky and so probabl
 
     - The User Stories in the [User Experience (UX)](#user-experience-ux) part of this document are numbered 1-9.  The existing features are listed above as F01 to F10.  Below is a traceability matrix cross-referencing the user stories with the features, illustrating which features support which stories :
 
-    ![User Story Feature Matrix](documentation/to be written)
+        ![User Story Feature Matrix](documentation/images/us-feat-matrix.png)
 
 ### Features which could be implemented in the future
 
@@ -189,11 +189,7 @@ The questions currently available on the website are quite tricky and so probabl
 -   [Font Awesome:](https://fontawesome.com/) was used to add icons for aesthetic and UX purposes.
 -   [Git:](https://git-scm.com/) was used for version control by utilising the Gitpod terminal to commit to Git and Push to GitHub.
 -   [GitHub:](https://github.com/) is used as the respository for the projects code after being pushed from Git.
--   [Microsoft Paint 3D:](https://www.microsoft.com/en-us/p/paint-3d/9nblggh5fv99?activetab=pivot:overviewtab) was used for resizing images and editing photos for the website.
 -   [Balsamiq:](https://balsamiq.com/) was used to create the wireframes during the design process.
-
-to be written
-    
 
 ## Testing
 
@@ -247,7 +243,7 @@ to be written
 
 ### How to clone the repository
 
-- Go to the https://github.com/elainebroche-dev/ms1-thrive repository on GitHub 
+- Go to the https://github.com/elainebroche-dev/ms2-anagram repository on GitHub 
 - Click the "Code" button to the right of the screen, click HTTPs and copy the link there
 - Open a GitBash terminal and navigate to the directory where you want to locate the clone
 - On the command line, type "git clone" then paste in the copied url and press the Enter key to begin the clone process
@@ -255,12 +251,12 @@ to be written
 ## Credits 
 
 ### Content 
-- The anagrams were sourced from a mixture of gthe below websites :
-    - [Source 1](https://www.sporcle.com/games/)
-    - [Source 2](https://readymadepubquiz.com/tag/anagrams/)
-    - [Source 3](https://www.bibliofreak.net/2015/06/anagrams-004-famous-authors.html)
-    - [Source 4](https://www.funtrivia.com/submitquiz.cfm)
-    - [Source 5](https://freeology.com/reading/famous-books-anagrams/)
+- The anagrams were sourced from a mixture of the below websites :
+    - [Sporacle](https://www.sporcle.com/games/)
+    - [Ready MAde Pub Quiz](https://readymadepubquiz.com/tag/anagrams/)
+    - [Biblio Freak](https://www.bibliofreak.net/2015/06/anagrams-004-famous-authors.html)
+    - [Fun Trivia](https://www.funtrivia.com/submitquiz.cfm)
+    - [Freeology](https://freeology.com/reading/famous-books-anagrams/)
 
 ### Code 
 - Code on how to do a full page background came from information on this website : [Full Page Backgound](https://css-tricks.com/perfect-full-page-background-image/ )
@@ -277,17 +273,13 @@ to be written
 - Code on to add/remove icon classes using classList came from information on this website : [Classlist to Swap Icons](https://stackoverflow.com/questions/48612799/add-remove-class-fa-icon-javascript)
 
 ### Media 
-- To be written : The fonts used were imported from [Google Fonts](https://fonts.google.com/)
-- To be written : The colours used were based on ??????
-- To be wrritten : The icons xxxxxx were taken from [Font Awesome](https://fontawesome.com/)
-
-
-- Background photo by <a href="https://unsplash.com/@ripato?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Ricardo Gomez Angel</a> on <a href="https://unsplash.com/photos/5YM26lUicfU">Unsplash</a>
+- The fonts used were imported from [Google Fonts](https://fonts.google.com/)
+- The colours used were based on this palette at [Scheme Color](https://www.schemecolor.com/very-dark-blue-grey-orange.php)
+- The icons for the clock, correct answer, incorrect answer, user and exit icons were taken from [Font Awesome](https://fontawesome.com/)
+- Background photo is by <a href="https://unsplash.com/@ripato?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Ricardo Gomez Angel</a> on <a href="https://unsplash.com/photos/5YM26lUicfU">Unsplash</a>
 - The favicon was created from the "exchange" icon image on [Font Awesome](https://fontawesome.com/)
 - Screen layout and interactions were influenced by the UX features of the [Duolingo](https://www.duolingo.com/learn) application.
 
-
-  
 ### Acknowledgments
 
 - To be written.
