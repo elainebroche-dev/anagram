@@ -118,10 +118,22 @@ The questions currently available on the website are quite tricky and so probabl
 
 -   ### Wireframes
 
-    -   #### To be written Wireframes
+    <details>
+    <summary>Desktop Wireframes</summary>
 
-        ![To be written](documentation/to be written)
+    ![Desktop Wireframes](documentation/wireframes/desktop.png)
+    </details>
+    <details>
+    <summary>Tablet Wireframes</summary>
 
+    ![Desktop Wireframes](documentation/wireframes/tablet.png)
+    </details>
+    <details>
+    <summary>Smartphone Wireframes</summary>
+
+    ![Desktop Wireframes](documentation/wireframes/smartphone.png)
+    </details>
+    
 ## Technologies Used
 
 ### Languages Used
