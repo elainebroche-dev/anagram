@@ -1,4 +1,4 @@
-<h1 align="center">Thrive Juices and Smoothies Website</h1>
+<h1 align="center">ANAGRAM word puzzle Website</h1>
 
 [View the live project here](https://elainebroche-dev.github.io/ms2-anagram/)
 
