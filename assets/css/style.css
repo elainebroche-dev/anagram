@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Questrial&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kiwi+Maru:wght@500&family=Questrial&display=swap');
 
 :root {
     --midgrey: #3a3a3a;
@@ -163,6 +163,20 @@ body {
 #user {
     border-radius: 0.3rem;
     padding: 0.8rem 0;
+}
+
+#welcome-text {
+    font-size: 150%;
+}
+
+#game-title {
+    font-family: 'Kiwi Maru';
+    font-size: 450%;
+    padding-bottom: 2rem;
+    letter-spacing:0.3rem;
+    text-transform:none; 
+    color: --var(button-orange);
+    text-shadow: 2px 2px 1px white;
 }
 
 #message-1 {
