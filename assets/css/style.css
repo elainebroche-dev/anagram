@@ -167,6 +167,7 @@ body {
 
 #welcome-text {
     font-size: 150%;
+    visibility: hidden;
 }
 
 #game-title {
@@ -175,7 +176,7 @@ body {
     padding-bottom: 2rem;
     letter-spacing:0.3rem;
     text-transform:none; 
-    color: --var(button-orange);
+    color: var(--button-orange);
     text-shadow: 2px 2px 1px white;
 }
 

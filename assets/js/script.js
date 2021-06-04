@@ -54,6 +54,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // kick off the login
   runLogin();
+
+  // run welcome animation
+  //typeWriter1();
+
+  // fade in game title
+  fadeIn(document.getElementById("game-title"));
 });
 
 /**
@@ -323,5 +329,61 @@ function startTimer() {
       width--;
       elem.style.width = (width / 24).toFixed(2) + "%";
     }
+  }
+}
+
+/**  
+ * fade in the game title
+ */
+function fadeIn(element) {
+  var op = 0.1;  // initial opacity
+  element.style.display = 'block';
+  var timer = setInterval(function () {
+      if (op >= 1){
+          clearInterval(timer);
+      }
+      element.style.opacity = op;
+      element.style.filter = 'alpha(opacity=' + op * 100 + ")";
+      op += op * 0.1;
+  }, 50);
+}
+
+/** 
+ * animate welcome message to look like typed letters
+ */
+ let txt1 = "Cool Met We";
+ let txt2 = "Welcome to . . .";
+ let speed = 100;
+ let i = 1;
+ let j = txt1.length;
+ let x = 1;
+
+ function typeWriter1() {
+   setTimeout(typeWriter, 1000);
+   document.getElementById("welcome-text").style.visibility = "visible";
+ }
+
+ function typeWriter() {
+  document.getElementById("welcome-text").style.visibility = "visible";
+  if (i < txt1.length) {
+    document.getElementById("welcome-text").innerHTML += txt1.charAt(i);
+    i++;
+    setTimeout(typeWriter, speed);
+  } 
+  else if (j > 0) {
+    mystr = document.getElementById("welcome-text").innerHTML;
+  	document.getElementById("welcome-text").innerHTML = mystr.substring(0, j);
+  	j--;
+    setTimeout(typeWriter, speed);
+  } 
+  else if (j == 0) {  //need this for a smooth transition across to the new string - otherwise there will be jump on-screen if element is empty
+    document.getElementById("welcome-text").innerHTML = txt2.charAt(0);
+    j--;
+    setTimeout(typeWriter, speed);
+  }
+  else if (x < txt2.length) {
+    document.getElementById("welcome-text").innerHTML += txt2.charAt(x);
+    x++;
+    setTimeout(typeWriter, speed);
   }
 }

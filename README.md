@@ -273,6 +273,7 @@ The questions currently available on the website are quite tricky and so probabl
 - Code to create the timer progress bar came from information on this website : [Timer Bar](https://www.w3schools.com/howto/howto_js_progressbar.asp)
 - Code to replace multiple whitespace characters with a single space came from information on this website : [Replace Whitespace](https://stackoverflow.com/questions/1981349/regex-to-replace-multiple-spaces-with-a-single-space)
 - Code on to add/remove icon classes using classList came from information on this website : [Classlist to Swap Icons](https://stackoverflow.com/questions/48612799/add-remove-class-fa-icon-javascript)
+- Code to achieve the typewriter effect on the login screen came from examples on this website : [Typewriter Effect](https://www.w3schools.com/howto/howto_js_typewriter.asp)
 
 ### Media 
 - The fonts used were imported from [Google Fonts](https://fonts.google.com/)
