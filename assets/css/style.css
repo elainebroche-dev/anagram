@@ -190,7 +190,7 @@ body {
 #topic-panel {
     display: none;
     clear: both;
-    padding-top: 2rem;
+    padding-top: 1.5rem;
 }
 
 .topic-btn {
@@ -223,8 +223,8 @@ body {
 #word-display {
     margin: 0 auto 2rem;
     background-color: var(--offwhite);
-    position: relative;
     color: var(--question-text);
+    position: relative;
     font-size: 150%;
     padding: 1rem 0.3rem;
     border-radius: 0.3rem;
