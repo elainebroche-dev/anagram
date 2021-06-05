@@ -25,6 +25,9 @@ let quiz = [
       { question: "Sepsis Month", answer: "The Simpsons" },
       { question: "Hop Sweep", answer: "Peep Show" },
       { question: "Unfit Yodel", answer: "Line of Duty" },
+      { question: "Mob Tot", answer: "Bottom" },
+      { question: "Mad Yards", answer: "Dads Army" },
+      { question: "Erased Nest", answer: "Eastenders" },
       { question: "Localise Vinyl", answer: "Silicon Valley" }
     ]
   },
@@ -53,6 +56,7 @@ let quiz = [
       { question: "I Warm Billions", answer: "Robin Williams" },
       { question: "I'll be Stern", answer: "Ben Stiller" },
       { question: "Baffle Neck", answer: "Ben Affleck" },
+      { question: "Genuine Class", answer: "Alec Guinness" },
       { question: "Germany", answer: "Meg Ryan" }
     ]
   },
