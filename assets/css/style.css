@@ -9,6 +9,7 @@
     --bg-orange: #f57309;
     --msg-text: gold;
     --question-text: black;
+    --timer-green: #14b029;
 }
 
 * {
@@ -215,7 +216,7 @@ body {
 #timer {
     width: 100%;
     height: 0.625rem;
-    background-color: #14b029;
+    background-color: var(--timer-green);
     border-radius: 1rem;
 }
 
