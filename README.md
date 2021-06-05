@@ -23,21 +23,27 @@ The questions currently available on the website are quite tricky and so probabl
 
     -   #### As a user I want to be able to :
 
-        1. Enter a username and have this visible on screen while the game is in progress.
-        2. Choose from a list of topics to answer questions on.
-        3. Play a round of 10 random anagram questions on the topic selected.
-        4. Easily tell which question of the round is being asked.
-        5. See a running total of correct answers.
-        6. See a timer to indicate how much time is left to enter an answer.
-        7. Get feedback on whether or not the correct answer has been entered.
-        8. At the end of the round get feedback on overall score for the round.
-        9. Navigate easily between the game screens, including quitting a round, playing another round or ending the game.
+        1. Easily determine the purpose of the website.
+        2. Enter a username and have this visible on screen while the game is in progress.
+        3. Choose from a list of topics to answer questions on.
+        4. Play a round of 10 random anagram questions on the topic selected.
+        5. Easily tell which question of the round is being asked.
+        6. See a running total of correct answers.
+        7. See a timer to indicate how much time is left to enter an answer.
+        8. Get feedback on whether or not the correct answer has been entered.
+        9. At the end of the round get feedback on overall score for the round.
+        10. Navigate easily between the game screens, including quitting a round, playing another round or ending the game.
 
 ## Features
 
 ### Existing Features
 
--   __F01 Navigation between screens__
+-   __F01 Title Animation__
+    - When the page is first loaded an animation runs which behaves as if text is being typed on screen.  First "Cool Met We" is typed, then erased and replaced with it's anagram of "Welcome to . . .".  Next the title of the game - "Anagram" fades in.  This animation clearly introduces the purpose of the website to the user.
+
+      ![Title Animation](documentation/to be written)
+
+-   __F02 Navigation between screens__
     - The game is comprised of 4 screens :
 
         1. Username/Login screen
@@ -49,19 +55,19 @@ The questions currently available on the website are quite tricky and so probabl
 
       ![Navigation Shortcut](documentation/to be written)
 
--   __F02 Capture Username__
+-   __F03 Capture Username__
 
     - When the website loads the user is asked to enter a username (see screenshot below).  The username needs to be betwen 1 and 15 characters long (inclusive).  The characters should all be alphanumeric - upper or lower case A-Z and digits 0-9.  The code uses a regular expression to validate the input string.  If the user has entered an invalid username then a feedback message is shown on-screen and the user can try again.  Once a valid username is entered the user is taken to the topic selection screen and the username is displayed on the top right beside the user icon until the user chooses to end the game.
 
       ![Capture Username](documentation/to be written)
 
--   __F03 Select Topic__
+-   __F04 Select Topic__
 
     - Depending on the data available the user will be shown a maximum of 4 topic buttons to select from - currently data for 4 topics has been provided and so the screen will appear as shown in the below screenshot.  Each button is labelled with the topic title.  The user can quit the game at this point by clicking on the "X" at the top left of the screen. Clicking on a topic button will start a round of questions on the selected topic.
 
       ![Choose Topic](documentation/to be written)
 
--   __F04 Play a round of 10 anagrams (Play Game screen)__
+-   __F05 Play a round of 10 anagrams (Play Game screen)__
 
     - Once the user has selected a topic the main game screen is shown.  There are a number of features on this screen, most are detailed in separate feature paragraphs below.  At a high level, this screen screen behaves as follows :
         1. The username and selected Topic Title are displayed on screen.
@@ -75,24 +81,24 @@ The questions currently available on the website are quite tricky and so probabl
 
       ![Play Game](documentation/to be written)
 
--   __F05 Anagram Timer__
+-   __F06 Anagram Timer__
     - On the Play Game screen, the user is given 60 seconds to enter their answer to the current anagram question.  The timer is presented as a bar at the top of the screen which reduces in width to show the decreasing time remaining.
 
     - The timer is stopped if the "Check Answer" button is clicked or if the user clicks the "X" on the top left of the screen to return to the "Select Topic" screen.
 
       ![Timer](documentation/to be written)
 
--   __F06 Progress Bar and "X OF 10" phrase__
+-   __F07 Progress Bar and "X OF 10" phrase__
     - On the Play Game screen, both of these elements support the user in easily seeing how far they have progressed in the current round of anagrams/questions. The progress bar increases in width by 10% as each new question is displayed and the X value of the "X OF 10" phrase at the bottom right of the screen also gets incremented.
 
       ![Progress](documentation/to be written)
 
--   __F07 Running total of correct answers__
+-   __F08 Running total of correct answers__
     - On the Play Game screen, there is a "N CORRECT ANSWERS" phrase on the bottom right of the screen that keeps a running total of the number of questions the user has answered correctly in the current round - this supports the user in easily seeing their running tally.
 
       ![Correct Answers](documentation/to be written)
 
--   __F08 Check Answer button__
+-   __F09 Check Answer button__
     - On the Play Game screen, the user's answer is checked when either a) the user clicks the Check Answer button b) the user presses the Enter key when focus is on the answer text field or c) when the timer runs out (60 seconds).  When the Check Answer is triggered a number of changes happen.
 
         1. The timer is stopped.
@@ -100,7 +106,7 @@ The questions currently available on the website are quite tricky and so probabl
         3. The answer given by the user is checked to see if it matches the expected answer.
         4. If the user answer is correct, the background of the input text field turns green, the tick symbol icon is displayed under the input field and the X value in the "X CORRECT ANSWERS" phrase is increased by 1.
         5. If the user answer is not correct, the background of the input text field turns red, and an "X" icon is displayed under the input field.
-        6. The Check Answer button becomes a Continue button (F09) (or End Round button (F10) if the current question is the last question).
+        6. The Check Answer button becomes a Continue button (F10) (or End Round button (F11) if the current question is the last question).
     
       ![User Enters Text](documentation/to be written)
 
@@ -108,7 +114,7 @@ The questions currently available on the website are quite tricky and so probabl
 
       ![Answer is Incorrect](documentation/to be written)
    
--   __F09 Continue button__
+-   __F10 Continue button__
     - On the Play Game screen, the Continue button allows the user to contol the timing of when they move on to the next question.  When they have had a chance to review the feedback from the question just finished, they can then click Continue, this will trigger a number of changes.
 
         1. The timer is refreshed to 60 seconds and started.
@@ -120,14 +126,14 @@ The questions currently available on the website are quite tricky and so probabl
 
       ![Next Question](documentation/to be written)
 
--   __F10 End of Round screen__
-    - As noted under the description of F08 above, the Check Answer button becomes the End Round button once the user answers the last question in the round of 10.   Once they have reviewed the feedback for question 10 and clicked on the End Round button they are brought to the End of Round screen which shows their total score for the round and displays a message based on that score (see screenshot below).  At this point the user can Play Again - whcih will bring them back to the Select Topic screen, or End Game which brings them back to the initial screen and clears out the username.
+-   __F11 End of Round screen__
+    - As noted under the description of F09 above, the Check Answer button becomes the End Round button once the user answers the last question in the round of 10.   Once they have reviewed the feedback for question 10 and clicked on the End Round button they are brought to the End of Round screen which shows their total score for the round and displays a message based on that score (see screenshot below).  At this point the user can Play Again - whcih will bring them back to the Select Topic screen, or End Game which brings them back to the initial screen and clears out the username.
 
       ![End of Round](documentation/to be written)
     
 - __How these features support the User Stories__
 
-    - The User Stories in the [User Experience (UX)](#user-experience-ux) part of this document are numbered 1-9.  The existing features are listed above as F01 to F10.  Below is a traceability matrix cross-referencing the user stories with the features, illustrating which features support which stories :
+    - The User Stories in the [User Experience (UX)](#user-experience-ux) part of this document are numbered 1-10.  The existing features are listed above as F01 to F11.  Below is a traceability matrix cross-referencing the user stories with the features, illustrating which features support which stories :
 
         ![User Story Feature Matrix](documentation/images/us-feat-matrix.png)
 
