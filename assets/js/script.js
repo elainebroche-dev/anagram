@@ -321,12 +321,17 @@ function startTimer() {
   timer = setInterval(frame, 25);
 
   function frame() {
-    if (width <= 0) {
-      checkAnswer();
-    } else {
-      width--;
-      if (width < 600) elem.style.backgroundColor = "rgb(220,37,46)";
-      elem.style.width = (width / 24).toFixed(2) + "%";
+    try {
+      if (width <= 0) {
+        checkAnswer();
+      } else {
+        width--;
+        if (width < 600) elem.style.backgroundColor = "rgb(220,37,46)";
+        elem.style.width = (width / 24).toFixed(2) + "%";
+      }
+    } catch (e) {
+      clearInterval(timer);     // something went wrong so clear the interval timer
+      throw e;                  // re-throw the error
     }
   }
 }
@@ -334,7 +339,6 @@ function startTimer() {
 /** 
  * animate welcome message to look like typed letters and fade in game title
  */
-
  function typeWriter() {
   let txt1 = "Cool Met We . . .";
   let txt2 = "Welcome to . . .";
@@ -343,11 +347,8 @@ function startTimer() {
   let c = 0;
 
   let elem1 = document.getElementById("welcome-text");
-  let keepGoing = setInterval(typeText, 100);
-
-  function typeText() {
+  let keepGoing = setInterval(function() {
     try {
-      //elem1.style.visibility = "visible";
       if (a < txt1.length) {
         elem1.innerHTML += txt1.charAt(a);
         a++;
@@ -362,12 +363,11 @@ function startTimer() {
         clearInterval(keepGoing);
         fadeIn(document.getElementById("game-title"));            // fade in game title
       }
-    }
-    catch(e) {
-      clearInterval(keepGoing);
+    } catch(e) {
+      clearInterval(keepGoing);   // something has gone wrong so clear the interval timer
       throw e;
     }
-  }
+  }, 100);
 }
 
 /**  
@@ -378,11 +378,16 @@ function startTimer() {
   element.style.opacity = op;
   element.style.visibility = 'visible';
   let fadetimer = setInterval(function () {
+    try {
       if (op >= 1){
           clearInterval(fadetimer);
       }
       element.style.opacity = op;
       element.style.filter = 'alpha(opacity=' + op * 100 + ")";
       op += op * 0.1;
+    } catch(e) {
+      clearInterval(fadetimer);
+      throw e;
+    }
   }, 50);
 }
