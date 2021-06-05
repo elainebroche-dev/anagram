@@ -121,7 +121,7 @@ body {
     padding: 0.8rem;
     font-size: 1.25rem;
     margin-top: 1.5rem;
-    width: 17.5rem;
+    width : 60%;
     border-radius: 11px;
     border-bottom: 4px solid var(--border-orange);
 }
