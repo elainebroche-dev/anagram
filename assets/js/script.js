@@ -352,7 +352,7 @@ function startTimer() {
         elem1.innerHTML += txt1.charAt(a);
         a++;
       } else if (b > 0) {
-        mystr = document.getElementById("welcome-text").innerHTML;
+        mystr = elem1.innerHTML;
         elem1.innerHTML = mystr.substring(0, b);
         b--;
       } else if (b == 0) {  //need this for a smooth transition across to the new string - otherwise there will be jump on-screen if element is empty
