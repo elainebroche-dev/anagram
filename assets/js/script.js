@@ -325,6 +325,7 @@ function startTimer() {
       checkAnswer();
     } else {
       width--;
+      if (width < 600) elem.style.backgroundColor = "rgb(220,37,46)";
       elem.style.width = (width / 24).toFixed(2) + "%";
     }
   }
