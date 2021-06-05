@@ -157,7 +157,7 @@ The questions currently available on the website are quite tricky and so probabl
         ![Colour Palette](documentation/images/anagrampalette.png)
 
 -   ### Typography
-    -   Google Fonts were used to import the Questrial font into styles.css. This was chosen as it has a modern feel and is highly readable which is particularly important in the context of a word game site.
+    -   Google Fonts were used to import the Questrial and Kiwi Maru fonts into styles.css. Questrial was chosen as it has a modern feel and is highly readable which is particularly important in the context of a word game site.  Kiwi Maru was chosen for the game title as it is similar to "typewriter" styles such as "American Typewriter" font and this theme seems appropriate for a word puzzle.
 
 -   ### Wireframes
 
@@ -187,7 +187,7 @@ The questions currently available on the website are quite tricky and so probabl
 
 ### Frameworks, Libraries & Programs Used
 
--   [Google Fonts:](https://fonts.google.com/) to be written
+-   [Google Fonts:](https://fonts.google.com/) was used to import the Questrial and Kiwi Maru fonts.
 -   [Font Awesome:](https://fontawesome.com/) was used to add icons for aesthetic and UX purposes.
 -   [Git:](https://git-scm.com/) was used for version control by utilising the Gitpod terminal to commit to Git and Push to GitHub.
 -   [GitHub:](https://github.com/) is used as the respository for the projects code after being pushed from Git.
@@ -274,6 +274,7 @@ The questions currently available on the website are quite tricky and so probabl
 - Code to replace multiple whitespace characters with a single space came from information on this website : [Replace Whitespace](https://stackoverflow.com/questions/1981349/regex-to-replace-multiple-spaces-with-a-single-space)
 - Code on to add/remove icon classes using classList came from information on this website : [Classlist to Swap Icons](https://stackoverflow.com/questions/48612799/add-remove-class-fa-icon-javascript)
 - Code to achieve the typewriter effect on the login screen came from examples on this website : [Typewriter Effect](https://www.w3schools.com/howto/howto_js_typewriter.asp)
+- Code to do the fade-in of the game title came from information on this website : [Title Fade-in](https://stackoverflow.com/questions/6121203/how-to-do-fade-in-and-fade-out-with-javascript-and-css)
 
 ### Media 
 - The fonts used were imported from [Google Fonts](https://fonts.google.com/)

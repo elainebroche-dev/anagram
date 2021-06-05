@@ -178,6 +178,7 @@ body {
     text-transform:none; 
     color: var(--button-orange);
     text-shadow: 2px 2px 1px white;
+    visibility: hidden;
 }
 
 #message-1 {
