@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", function () {
   runLogin();
 
   // run welcome animation and title fade in
-  typeWriter();
+  setTimeout(typeWriter,1200);
 
 });
 
@@ -336,27 +336,24 @@ function startTimer() {
  */
 
  function typeWriter() {
-  let txt1 = "Cool Met We";
+  let txt1 = "Cool Met We . . .";
   let txt2 = "Welcome to . . .";
-  let a = 1;
+  let a = 0;
   let b = txt1.length;
-  let c = 1;
+  let c = 0;
 
   let elem1 = document.getElementById("welcome-text");
   let keepGoing = setInterval(typeText, 100);
 
   function typeText() {
     try {
-      elem1.style.visibility = "visible";
+      //elem1.style.visibility = "visible";
       if (a < txt1.length) {
         elem1.innerHTML += txt1.charAt(a);
         a++;
-      } else if (b > 0) {
+      } else if (b >= 0) {
         mystr = elem1.innerHTML;
         elem1.innerHTML = mystr.substring(0, b);
-        b--;
-      } else if (b == 0) {  //need this for a smooth transition across to the new string - otherwise there will be jump on-screen if element is empty
-        elem1.innerHTML = txt2.charAt(0);
         b--;
       } else if (c < txt2.length) {
         elem1.innerHTML += txt2.charAt(c);

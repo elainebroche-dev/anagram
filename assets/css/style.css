@@ -168,7 +168,7 @@ body {
 
 #welcome-text {
     font-size: 150%;
-    visibility: hidden;
+    height: 1rem;
 }
 
 #game-title {
