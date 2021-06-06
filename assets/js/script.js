@@ -147,7 +147,7 @@ function runGame() {
  */
 function runEndGame() {
   let currStr = document.getElementById("num-correct").innerText;
-  let numCorrect = parseInt(currStr.substring(0, currStr.indexOf(' ')));
+  let numCorrect = parseInt(currStr.substring(0, currStr.indexOf(" ")));
 
   let msgStr = "";
   switch (true) {
@@ -183,7 +183,7 @@ function checkUser() {
   // check that the username satisfies the alphanumeric reg expression
   if (username.match(regexp)) {
     document.getElementById("username").innerText = username;
-    runTopics('topic-panel');
+    runTopics("topic-panel");
   } else {
     document.getElementById("message-1").style.display = "block";
     document.getElementById("user").value = "";
@@ -271,7 +271,7 @@ function checkAnswer() {
   }
   document.getElementById("response-icon").style.visibility = "visible";
 
-  let questionsAsked = parseInt(document.getElementById("num-asked").innerText.substring(0, document.getElementById("num-asked").innerText.indexOf(' ')));
+  let questionsAsked = parseInt(document.getElementById("num-asked").innerText.substring(0, document.getElementById("num-asked").innerText.indexOf(" ")));
   document.getElementById("game-button").innerText = (questionsAsked < 10) ? "Continue" : "End Round";
 }
 
@@ -280,8 +280,8 @@ function checkAnswer() {
  */
 function stringsMatch(str1, str2) {
   // replace multiple whitespace chars with a single space
-  str1 = str1.replace(/\s\s+/g, ' ').trim().toUpperCase();
-  str2 = str2.replace(/\s\s+/g, ' ').trim().toUpperCase();
+  str1 = str1.replace(/\s\s+/g, " ").trim().toUpperCase();
+  str2 = str2.replace(/\s\s+/g, " ").trim().toUpperCase();
   return (str1 === str2) ? true : false;
 }
 
@@ -376,14 +376,14 @@ function startTimer() {
  function fadeIn(element) {
   let op = 0.1;  // initial opacity
   element.style.opacity = op;
-  element.style.visibility = 'visible';
+  element.style.visibility = "visible";
   let fadetimer = setInterval(function () {
     try {
       if (op >= 1){
           clearInterval(fadetimer);
       }
       element.style.opacity = op;
-      element.style.filter = 'alpha(opacity=' + op * 100 + ")";
+      element.style.filter = "alpha(opacity=" + op * 100 + ")";
       op += op * 0.1;
     } catch(e) {
       clearInterval(fadetimer);
