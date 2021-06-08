@@ -10,14 +10,9 @@ let timer;
 // Wait for the DOM to finish loading then add listeners
 document.addEventListener("DOMContentLoaded", function () {
 
-  // check that the quiz data is available - this code will throw an error if quiz file does not exist or quiz is empty
-  try {
-    if(!quiz.length) {
-      alert(`Error trying to access Quiz data`);
-      throw `Error trying to access Quiz data. Aborting`;
-    }
-  }
-  catch (error) {
+  // check that the quiz data is available - this code will throw an error if quiz does not exist or quiz is empty
+  
+  if ((typeof quiz === 'undefined') || (!quiz.length)) {
     alert(`Error trying to access Quiz data`);
     throw `Error trying to access Quiz data. Aborting`;
   }
