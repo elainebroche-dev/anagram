@@ -51,7 +51,7 @@ The questions currently available on the website are quite tricky and so probabl
         3. Play Game screen
         4. End of Round screen
 
-    - Normally, navigation through the screens will happen by interacting with the game selection buttons to play the game.  However, there is also an "X" at the top left of each screen to help the user navigate more quickly.  Clicking on the "X" when on the Username/Login screen (1) will close the browser window.  Clicking on the "X" when on the Select Topic screen (2) will end the current game and return the user to the Username/Login screen (1).  Clicking the "X" when on either the Play Game screen (3) or End of Round screen (4) will end the round and return the user to the Select Topic screen (2).
+    - Normally, navigation through the screens will happen by interacting with the game selection buttons to play the game.  However, there is also a "<<" icon at the top left of each screen except the Login screen to help the user navigate more quickly. Clicking on the "<<" when on the Select Topic screen (2) will end the current game and return the user to the Username/Login screen (1).  Clicking the "<<" when on either the Play Game screen (3) or End of Round screen (4) will end the round and return the user to the Select Topic screen (2).
 
       ![Navigation Shortcut](documentation/to be written)
 
@@ -63,7 +63,7 @@ The questions currently available on the website are quite tricky and so probabl
 
 -   __F04 Select Topic__
 
-    - Depending on the data available the user will be shown a maximum of 4 topic buttons to select from - currently data for 4 topics has been provided and so the screen will appear as shown in the below screenshot.  Each button is labelled with the topic title.  The user can quit the game at this point by clicking on the "X" at the top left of the screen. Clicking on a topic button will start a round of questions on the selected topic.
+    - Depending on the data available the user will be shown a maximum of 4 topic buttons to select from - currently data for 4 topics has been provided and so the screen will appear as shown in the below screenshot.  Each button is labelled with the topic title.  The user can quit the game at this point by clicking on the "<<" at the top left of the screen. Clicking on a topic button will start a round of questions on the selected topic.
 
       ![Choose Topic](documentation/to be written)
 
@@ -77,14 +77,14 @@ The questions currently available on the website are quite tricky and so probabl
         5. Once the user is ready to move on, they click the "Continue" button to move to the next question/anagram.  The progress bar and question number features at the bottom of the screen are updated, a new question is displayed and the timer is refreshed.
         6. As mentioned, on answering question 10, the "Check Answer" button changes to an "End Round" button, when the user clicks on this they get feedback for the full round of questions.
 
-    - Clicking the "X" at the top left of the screen will bring the user back to the "Select Topic" screen.
+    - Clicking the "<<" at the top left of the screen will bring the user back to the "Select Topic" screen.
 
       ![Play Game](documentation/to be written)
 
 -   __F06 Anagram Timer__
     - On the Play Game screen, the user is given 60 seconds to enter their answer to the current anagram question.  The timer is presented as a bar at the top of the screen which reduces in width to show the decreasing time remaining.
 
-    - The timer is stopped if the "Check Answer" button is clicked or if the user clicks the "X" on the top left of the screen to return to the "Select Topic" screen.
+    - The timer is stopped if the "Check Answer" button is clicked or if the user clicks the "<<" on the top left of the screen to return to the "Select Topic" screen.
 
       ![Timer](documentation/to be written)
 
@@ -155,7 +155,7 @@ The questions currently available on the website are quite tricky and so probabl
 
 -   ### Imagery
     - The abstract background image was chosen to complement the grey and orange colour scheme.  The overall effect is designed to look modern and appeal to an adult audience rather than younger players as the questions currently provided target this age group.
-    - Features including the layout of the Play Game screen, positioning and behaviour of the "Check Answer" button, method of presentation of answer feedback, progress bar and behaviour of "X" in top left of screens were influenced by the UX features of the [Duolingo](https://www.duolingo.com/learn) application.
+    - Features including the layout of the Play Game screen, positioning and behaviour of the "Check Answer" button, method of presentation of answer feedback, progress bar and behaviour of "<<" in top left of screens were influenced by the UX features of the [Duolingo](https://www.duolingo.com/learn) application.
 
 -   ### Colour Scheme
     -  The colour scheme across the screens was kept simple and consistent so that it wouldn't be distracting and was inspired by the colours used by the [Quiz House](https://play.google.com/store/apps/details?id=co.quizhouse&hl=en&gl=US) application and from a palette on [Scheme Color](https://www.schemecolor.com/very-dark-blue-grey-orange.php)
@@ -285,7 +285,7 @@ The questions currently available on the website are quite tricky and so probabl
 ### Media 
 - The fonts used were imported from [Google Fonts](https://fonts.google.com/)
 - The colours used were based on this palette at [Scheme Color](https://www.schemecolor.com/very-dark-blue-grey-orange.php)
-- The icons for the clock, correct answer, incorrect answer, user and exit icons were taken from [Font Awesome](https://fontawesome.com/)
+- The icons for the clock, correct answer, incorrect answer, user and go back icons were taken from [Font Awesome](https://fontawesome.com/)
 - Background photo is by <a href="https://unsplash.com/@ripato?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Ricardo Gomez Angel</a> on <a href="https://unsplash.com/photos/5YM26lUicfU">Unsplash</a>
 - The favicon was created from the "exchange" icon image on [Font Awesome](https://fontawesome.com/)
 - Screen layout and interactions were influenced by the UX features of the [Duolingo](https://www.duolingo.com/learn) application.

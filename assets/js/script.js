@@ -10,9 +10,10 @@ let timer;
 // Wait for the DOM to finish loading then add listeners
 document.addEventListener("DOMContentLoaded", function () {
 
-  // check that the quiz data is available - this code will throw an error if quiz does not exist or is empty
+  // check that the quiz data is available - this code will throw an error if quiz file does not exist or quiz is empty
   try {
     if(!quiz.length) {
+      alert(`Error trying to access Quiz data`);
       throw `Error trying to access Quiz data. Aborting`;
     }
   }
@@ -21,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function () {
     throw `Error trying to access Quiz data. Aborting`;
   }
  
-  document.getElementById("exit").addEventListener("click", exit);
+  document.getElementById("goBack").addEventListener("click", goBack);
 
   // handle interactions on the login panel
   document.getElementById("user").addEventListener("keydown", function (event) {
@@ -74,15 +75,14 @@ function loadTopics() {
 }
 
 /**
- * if the exit button is clicked move back - close the window if x is clicked on the login screen
+ * if the goback button is clicked move back 
  */
-function exit() {
+function goBack() {
   clearInterval(timer); // stop the timer
   let panels = document.getElementsByClassName("panel");
   for (let panel of panels) {
     if (panel.style.display === "block") {
-      if (panel.id === "login-panel") self.close();
-      else if (panel.id === "topic-panel") runLogin();
+      if (panel.id === "topic-panel") runLogin();
       else if ((panel.id === "game-panel") || (panel.id === "end-panel")) runTopics();
     }
   }
@@ -98,6 +98,7 @@ function showPanel(panelName) {
       panel.style.display = "block";
     } else panel.style.display = "none";
   }
+  document.getElementById("goBack").style.visibility = (panelName === "login-panel") ? "hidden" : "visible";
 }
 
 /**
@@ -143,7 +144,7 @@ function runGame() {
 }
 
 /**
- * show the user the result of the round and let them choose to play again or exit
+ * show the user the result of the round and let them choose to play again or return to login
  */
 function runEndGame() {
   let currStr = document.getElementById("num-correct").innerText;

@@ -90,12 +90,13 @@ body {
     padding-right: 0.5rem;
 }
 
-#exit {
+#goBack {
     float: left;
     font-size: 150%;
     background-color: transparent;
     color: var(--offwhite);
     padding-top: 0.3rem;
+    visibility:hidden;
 }
 
 .user-icon {

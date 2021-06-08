@@ -1,4 +1,4 @@
-let quiz = [
+const quiz = [
   {
     topicTitle: "TV Shows / Sitcoms",
     questions: [
