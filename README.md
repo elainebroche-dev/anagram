@@ -79,24 +79,24 @@ The questions currently available on the website are quite tricky and so probabl
 
     - Clicking the "<<" at the top left of the screen will bring the user back to the "Select Topic" screen.
 
-      ![Play Game](documentation/to be written)
+      ![Play Game](documentation/images/f05-play-game.png)
 
 -   __F06 Anagram Timer__
     - On the Play Game screen, the user is given 60 seconds to enter their answer to the current anagram question.  The timer is presented as a bar at the top of the screen which reduces in width to show the decreasing time remaining.
 
     - The timer is stopped if the "Check Answer" button is clicked or if the user clicks the "<<" on the top left of the screen to return to the "Select Topic" screen.
 
-      ![Timer](documentation/to be written)
+      ![Timer](documentation/images/f06-timer.png)
 
 -   __F07 Progress Bar and "X OF 10" phrase__
     - On the Play Game screen, both of these elements support the user in easily seeing how far they have progressed in the current round of anagrams/questions. The progress bar increases in width by 10% as each new question is displayed and the X value of the "X OF 10" phrase at the bottom right of the screen also gets incremented.
 
-      ![Progress](documentation/to be written)
+      ![Progress](documentation/images/f07-progress-bar.png)
 
 -   __F08 Running total of correct answers__
     - On the Play Game screen, there is a "N CORRECT ANSWERS" phrase on the bottom right of the screen that keeps a running total of the number of questions the user has answered correctly in the current round - this supports the user in easily seeing their running tally.
 
-      ![Correct Answers](documentation/to be written)
+      ![Correct Answers](documentation/images/f08-correct-answers.png)
 
 -   __F09 Check Answer button__
     - On the Play Game screen, the user's answer is checked when either a) the user clicks the Check Answer button b) the user presses the Enter key when focus is on the answer text field or c) when the timer runs out (60 seconds).  When the Check Answer is triggered a number of changes happen.
@@ -107,12 +107,10 @@ The questions currently available on the website are quite tricky and so probabl
         4. If the user answer is correct, the background of the input text field turns green, the tick symbol icon is displayed under the input field and the X value in the "X CORRECT ANSWERS" phrase is increased by 1.
         5. If the user answer is not correct, the background of the input text field turns red, and an "X" icon is displayed under the input field.
         6. The Check Answer button becomes a Continue button (F10) (or End Round button (F11) if the current question is the last question).
-    
-      ![User Enters Text](documentation/to be written)
 
-      ![Answer is Correct](documentation/to be written)
+      ![Answer is Correct](documentation/images/f09-correct-answer.png)
 
-      ![Answer is Incorrect](documentation/to be written)
+      ![Answer is Incorrect](documentation/images/f09-incorrect-answer.png)
    
 -   __F10 Continue button__
     - On the Play Game screen, the Continue button allows the user to contol the timing of when they move on to the next question.  When they have had a chance to review the feedback from the question just finished, they can then click Continue, this will trigger a number of changes.
@@ -124,12 +122,13 @@ The questions currently available on the website are quite tricky and so probabl
         5. The progress bar is increased by 10% and N value in "N OF 10" increased by 1 to reflect that the game has moved on.
         6. The Continue button reverts to being the Check Answer button.
 
-      ![Next Question](documentation/to be written)
+      ![Continue](documentation/images/f10-continue-button.png)
+      ![Next Question](documentation/images/f10-continue-button-next-question.png)
 
 -   __F11 End of Round screen__
     - As noted under the description of F09 above, the Check Answer button becomes the End Round button once the user answers the last question in the round of 10.   Once they have reviewed the feedback for question 10 and clicked on the End Round button they are brought to the End of Round screen which shows their total score for the round and displays a message based on that score (see screenshot below).  At this point the user can Play Again - whcih will bring them back to the Select Topic screen, or End Game which brings them back to the initial screen and clears out the username.
 
-      ![End of Round](documentation/to be written)
+      ![End of Round](documentation/images/f11-end-of-round.png)
     
 - __How these features support the User Stories__
 
