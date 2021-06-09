@@ -19,20 +19,18 @@ The questions currently available on the website are quite tricky and so probabl
 
 ## User Experience (UX)
 
--   ### User stories
+-   ### User stories - as a user I want to be able to :
 
-    -   #### As a user I want to be able to :
-
-        1. Easily determine the purpose of the website.
-        2. Enter a username and have this visible on screen while the game is in progress.
-        3. Choose from a list of topics to answer questions on.
-        4. Play a round of 10 random anagram questions on the topic selected.
-        5. Easily tell which question of the round is being asked.
-        6. See a running total of correct answers.
-        7. See a timer to indicate how much time is left to enter an answer.
-        8. Get feedback on whether or not the correct answer has been entered.
-        9. At the end of the round get feedback on overall score for the round.
-        10. Navigate easily between the game screens, including quitting a round, playing another round or ending the game.
+    1. Easily determine the purpose of the website.
+    2. Enter a username and have this visible on screen while the game is in progress.
+    3. Choose from a list of topics to answer questions on.
+    4. Play a round of 10 random anagram questions on the topic selected.
+    5. Easily tell which question of the round is being asked.
+    6. See a running total of correct answers.
+    7. See a timer to indicate how much time is left to enter an answer.
+    8. Get feedback on whether or not the correct answer has been entered.
+    9. At the end of the round get feedback on overall score for the round.
+    10. Navigate easily between the game screens, including quitting a round, playing another round or ending the game.
 
 ## Features
 
