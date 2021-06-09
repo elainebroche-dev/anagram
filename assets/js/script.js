@@ -1,5 +1,4 @@
 /* jshint esversion: 6 */
-/* globals self: false */
 /* globals quiz: false */
 
 // variables to hold the topic qustions for the current round
@@ -349,7 +348,7 @@ function startTimer() {
         elem1.innerHTML += txt1.charAt(a);
         a++;
       } else if (b >= 0) {
-        mystr = elem1.innerHTML;
+        let mystr = elem1.innerHTML;
         elem1.innerHTML = mystr.substring(0, b);
         b--;
       } else if (c < txt2.length) {

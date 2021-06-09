@@ -226,7 +226,9 @@ The questions currently available on the website are quite tricky and so probabl
 ### Browser Compatibility
 
 - Testing has been carried out on the following browsers :
-    - to be written
+    - Chrome Version 90.0.4430.212 (Official Build) (64-bit)
+    - Firefox Version 88.0.1 (64-bit)
+    - Edge Version 90.0.818.62 (Official build) (64-bit)
     
 ### Test Cases and Results
 
@@ -261,7 +263,7 @@ The questions currently available on the website are quite tricky and so probabl
 ### Content 
 - The anagrams were sourced from a mixture of the below websites :
     - [Sporacle](https://www.sporcle.com/games/)
-    - [Ready MAde Pub Quiz](https://readymadepubquiz.com/tag/anagrams/)
+    - [Ready Made Pub Quiz](https://readymadepubquiz.com/tag/anagrams/)
     - [Biblio Freak](https://www.bibliofreak.net/2015/06/anagrams-004-famous-authors.html)
     - [Fun Trivia](https://www.funtrivia.com/submitquiz.cfm)
     - [Freeology](https://freeology.com/reading/famous-books-anagrams/)

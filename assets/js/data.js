@@ -1,3 +1,4 @@
+/*jshint esversion: 6 */
 const quiz = [
   {
     topicTitle: "TV Shows / Sitcoms",
