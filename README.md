@@ -66,6 +66,8 @@ The questions currently available on the website are quite tricky and so probabl
     - Depending on the data available the user will be shown a maximum of 4 topic buttons to select from - currently data for 4 topics has been provided and so the screen will appear as shown in the below screenshot.  Each button is labelled with the topic title.  The user can quit the game at this point by clicking on the "<<" at the top left of the screen. Clicking on a topic button will start a round of questions on the selected topic.
 
       ![Choose Topic](documentation/images/f04-select-topic.png)
+      
+      <img src="documentation/images/f04-select-topic.png" alt="Choose Topic" width="60%">
 
 -   __F05 Play a round of 10 anagrams (Play Game screen)__
 
