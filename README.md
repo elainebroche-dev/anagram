@@ -39,7 +39,7 @@ The questions currently available on the website are quite tricky and so probabl
 -   __F01 Title Animation__
     - When the page is first loaded an animation runs which behaves as if text is being typed on screen.  First "Cool Met We" is typed, then erased and replaced with it's anagram of "Welcome to . . .".  Next the title of the game - "Anagram" fades in.  This animation clearly introduces the purpose of the website to the user.
 
-      ![Title Animation](documentation/to be written)
+      ![Title Animation](documentation/images/f01-title-animation.png)
 
 -   __F02 Navigation between screens__
     - The game is comprised of 4 screens :
@@ -57,7 +57,7 @@ The questions currently available on the website are quite tricky and so probabl
 
     - When the website loads the user is asked to enter a username (see screenshot below).  The username needs to be betwen 1 and 15 characters long (inclusive).  The characters should all be alphanumeric - upper or lower case A-Z and digits 0-9.  The code uses a regular expression to validate the input string.  If the user has entered an invalid username then a feedback message is shown on-screen and the user can try again.  Once a valid username is entered the user is taken to the topic selection screen and the username is displayed on the top right beside the user icon until the user chooses to end the game.
 
-      ![Capture Username](documentation/to be written)
+      ![Capture Username](documentation/images/f03-capture-username-1.png)
 
 -   __F04 Select Topic__
 
