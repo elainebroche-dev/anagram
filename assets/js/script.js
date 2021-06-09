@@ -311,6 +311,7 @@ function incCounter(itemName) {
  */
 function startTimer() {
   let elem = document.getElementById("timer");
+  elem.style.backgroundColor = "rgb(20, 176, 80)";
   elem.style.width = "100%";
   let width = 2400;
   timer = setInterval(frame, 25);
