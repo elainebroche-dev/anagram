@@ -51,7 +51,7 @@ The questions currently available on the website are quite tricky and so probabl
 
     - Normally, navigation through the screens will happen by interacting with the game selection buttons to play the game.  However, there is also a "<<" icon at the top left of each screen except the Login screen to help the user navigate more quickly. Clicking on the "<<" when on the Select Topic screen (2) will end the current game and return the user to the Username/Login screen (1).  Clicking the "<<" when on either the Play Game screen (3) or End of Round screen (4) will end the round and return the user to the Select Topic screen (2).
 
-      ![Navigation Shortcut](documentation/to be written)
+      ![Navigation Shortcut](documentation/images/f02-navigation.png)
 
 -   __F03 Capture Username__
 
@@ -59,11 +59,13 @@ The questions currently available on the website are quite tricky and so probabl
 
       ![Capture Username](documentation/images/f03-capture-username-1.png)
 
+      ![Display Username](documentation/images/f03-capture-username-2.png)
+
 -   __F04 Select Topic__
 
     - Depending on the data available the user will be shown a maximum of 4 topic buttons to select from - currently data for 4 topics has been provided and so the screen will appear as shown in the below screenshot.  Each button is labelled with the topic title.  The user can quit the game at this point by clicking on the "<<" at the top left of the screen. Clicking on a topic button will start a round of questions on the selected topic.
 
-      ![Choose Topic](documentation/to be written)
+      ![Choose Topic](documentation/images/f04-select-topic.png)
 
 -   __F05 Play a round of 10 anagrams (Play Game screen)__
 
