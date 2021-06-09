@@ -6,7 +6,7 @@ ANAGRAM is an online word game.  The user is asked to identify themselves using 
 
 The questions currently available on the website are quite tricky and so probably best suited to an audience of older players - however, this data is separate from the coding.   Behind the scenes, the data could be modified to change the selection of topics or change the questions asked (e.g. adding more questions would improve the 'randomness' of the rounds).  A potential future feature could be the provision of a user-interface to change this data.
 
-![Mockup](documentation/to be written)
+![Mockup](documentation/images/resp-mockup.png)
 
 ## Index – Table of Contents
 * [User Experience (UX)](#user-experience-ux) 
@@ -234,11 +234,16 @@ The questions currently available on the website are quite tricky and so probabl
 
 - The below table details the test cases that were used, the results and a cross-reference to the Feature ID that each test case exercised (click to open iamge):
 
-  ![to be written](documentation/to be written)
+  <details>
+    <summary>Test Cases</summary>
+
+    ![Test Cases](documentation/images/test-cases.png)
+  </details>
+  
 
 ### Known bugs
 
-- To be written
+- Currently no known bugs.
 
 ## Deployment
 
