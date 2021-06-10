@@ -37,19 +37,19 @@ The anagrams currently available on the website are quite tricky and so probably
 ### Existing Features
 
 -   __F01 Title Animation__
-    - When the page is first loaded an animation runs which behaves as if text is being typed on screen.  First "Cool Met We" is typed, then erased and replaced with it's anagram of "Welcome to . . .".  Next the title of the game - "Anagram" fades in.  This animation clearly introduces the purpose of the website to the user.
+    - When the page is first loaded an animation runs which behaves as if text is being typed on screen.  First "Cool Met We" is typed, then erased and replaced with its anagram of "Welcome to . . .".  Next the title of the game - "Anagram" fades in.  This animation clearly introduces the purpose of the website to the user.
 
       ![Title Animation](documentation/images/f01-title-animation.png)
 
 -   __F02 Navigation between screens__
     - The game is comprised of 4 screens :
 
-        1. Username/Login screen
+        1. Login screen
         2. Select Topic screen
         3. Play Game screen
         4. End of Round screen
 
-    - Normally, navigation through the screens will happen by interacting with the game selection buttons to play the game.  However, there is also a "<<" icon at the top left of each screen except the Login screen to help the user navigate more quickly. Clicking on the "<<" when on the Select Topic screen (2) will end the current game and return the user to the Username/Login screen (1).  Clicking the "<<" when on either the Play Game screen (3) or End of Round screen (4) will end the round and return the user to the Select Topic screen (2).
+    - Normally, navigation through the screens will happen by interacting with the game selection buttons to play the game.  However, there is also a "<<" icon at the top left of each screen except the Login screen to help the user navigate more quickly. Clicking on the "<<" when on the Select Topic screen will end the current game and return the user to the Login screen.  Clicking the "<<" when on either the Play Game screen or End of Round screen will end the round and return the user to the Select Topic screen.
 
       ![Navigation Shortcut](documentation/images/f02-navigation.png)
 
@@ -59,7 +59,9 @@ The anagrams currently available on the website are quite tricky and so probably
 
       ![Capture Username](documentation/images/f03-capture-username-1.png)
 
-      ![Display Username](documentation/images/f03-capture-username-2.png)
+      ![Display Error](documentation/images/f03-capture-username-2.png)
+
+      ![Display Username](documentation/images/f03-capture-username-3.png)
 
 -   __F04 Select Topic__
 
