@@ -266,7 +266,8 @@ function checkAnswer() {
   }
   document.getElementById("response-icon").style.visibility = "visible";
 
-  let questionsAsked = parseInt(document.getElementById("num-asked").innerText.substring(0, document.getElementById("num-asked").innerText.indexOf(" ")));
+  let elem = document.getElementById("num-asked");
+  let questionsAsked = parseInt(elem.innerText.substring(0, elem.innerText.indexOf(" ")));
   document.getElementById("game-button").innerText = (questionsAsked < 10) ? "Continue" : "End Round";
 }
 

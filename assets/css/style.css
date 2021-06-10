@@ -67,7 +67,7 @@ body {
     text-transform: uppercase;
     height: 36.5rem;
     width: 95%;
-    box-sizing: border-box;  
+    box-sizing: border-box;
     max-height: 36.5rem;
     max-width: 31.25rem;
     margin-left: auto;
@@ -96,7 +96,7 @@ body {
     background-color: transparent;
     color: var(--offwhite);
     padding-top: 0.3rem;
-    visibility:hidden;
+    visibility: hidden;
 }
 
 .user-icon {
@@ -123,7 +123,7 @@ body {
     padding: 0.8rem;
     font-size: 1.25rem;
     margin-top: 1.5rem;
-    width : 60%;
+    width: 60%;
     border-radius: 11px;
     border-bottom: 4px solid var(--border-orange);
 }
@@ -176,8 +176,8 @@ body {
     font-family: 'Kiwi Maru';
     font-size: 450%;
     padding-bottom: 2rem;
-    letter-spacing:0.3rem;
-    text-transform:none; 
+    letter-spacing: 0.3rem;
+    text-transform: none;
     color: var(--button-orange);
     text-shadow: 2px 2px 1px white;
     visibility: hidden;
@@ -245,7 +245,7 @@ body {
     align-content: center;
     flex-direction: column;
     min-width: 0;
-    width:97%;
+    width: 97%;
 }
 
 
@@ -289,7 +289,7 @@ body {
     }
 
     .top-line p {
-        padding-top : 0;
+        padding-top: 0;
     }
 
     #main-panel {
@@ -302,6 +302,6 @@ body {
     }
 
     .info-text {
-        font-size : 1.4rem;
+        font-size: 1.4rem;
     }
 }

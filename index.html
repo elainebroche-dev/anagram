@@ -1,88 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Anagram word game">
-    <meta name="keywords" content="anagram, word game, puzzle, word challenge">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <title>Anagram</title>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Anagram word game">
+        <meta name="keywords" content="anagram, word game, puzzle, word challenge">
+        <link rel="stylesheet" href="assets/css/style.css">
+        <title>Anagram</title>
+    </head>
 
-</head>
-<body>
-    <header>
-        <div id="background-image">
-            <img src="assets/images/background.webp" alt="abstract background image">
-        </div>
-    </header> 
-    <div id="main-panel">
-
-        <div class="top-line">
-            <button id="goBack"><i class="fas fa-angle-double-left"></i></button>
-            <i class="fas fa-user-circle user-icon"></i>
-            <p id="username"></p>
-        </div>
-
-        <div class="panel" id="login-panel">
-
-            <p id="welcome-text"></p>
-            <p id="game-title">Anagram</p>
-            <div class="user-input">
-                <label for="user">please enter your username</label><br><br>
-                <input type="text" id="user" name="user" maxlength=15>
-                <p>alphanumeric characters only (max 15)</p>
+    <body>
+        <header>
+            <div id="background-image">
+                <img src="assets/images/background.webp" alt="abstract background image">
             </div>
-            <button class="button" id="login">Play Game</button>
-            <p class="user-message" id="message-1">usernames must be a single word of between 1 and 15 characters long 
-                containing only alphanumeric characters - please try again</p>
-        </div>
+        </header>
+        <div id="main-panel">
 
-        <div class="panel" id="topic-panel">
-            <p class="info-text">Please choose a topic</p>
-            <button class="button topic-btn">placeholder</button>
-            <button class="button topic-btn">placeholder</button>
-            <button class="button topic-btn">placeholder</button>
-            <button class="button topic-btn">placeholder</button>
-        </div>
+            <div class="top-line">
+                <button id="goBack"><i class="fas fa-angle-double-left"></i></button>
+                <i class="fas fa-user-circle user-icon"></i>
+                <p id="username"></p>
+            </div>
 
-        <div class="panel" id="game-panel">
+            <div class="panel" id="login-panel">
 
-            <p class="info-text" id="topic-title">TOPIC TITLE</p>
-            <div id="word-display">placeholder</div>
-            <div class="user-input">
-                <label for="answer">Your Answer</label>
-                <input type="text" id="answer" name="answer" maxlength=40>
+                <p id="welcome-text"></p>
+                <p id="game-title">Anagram</p>
+                <div class="user-input">
+                    <label for="user">please enter your username</label><br><br>
+                    <input type="text" id="user" name="user" maxlength=15>
+                    <p>alphanumeric characters only (max 15)</p>
+                </div>
+                <button class="button" id="login">Play Game</button>
+                <p class="user-message" id="message-1">usernames must be a single word of between 1 and 15 characters long
+                    containing only alphanumeric characters - please try again
+                </p>
+            </div>
+
+            <div class="panel" id="topic-panel">
+                <p class="info-text">Please choose a topic</p>
+                <button class="button topic-btn">placeholder</button>
+                <button class="button topic-btn">placeholder</button>
+                <button class="button topic-btn">placeholder</button>
+                <button class="button topic-btn">placeholder</button>
+            </div>
+
+            <div class="panel" id="game-panel">
+
+                <p class="info-text" id="topic-title">TOPIC TITLE</p>
+                <div id="word-display">placeholder</div>
+                <div class="user-input">
+                    <label for="answer">Your Answer</label>
+                    <input type="text" id="answer" name="answer" maxlength=40>
+                    <div class="status-bar">
+                        <div id="timer"></div>
+                    </div>
+                    <div id="result">
+                        <i class="fas fa-check-circle" id="response-icon"></i>
+                    </div>
+                </div>
+
+                <button class="button" id="game-button">Check Answer</button>
                 <div class="status-bar">
-                    <div id="timer"></div>
-                </div>
-                <div id="result">
-                    <i class="fas fa-check-circle" id="response-icon"></i>
+                    <div id="progress"></div>
+                    <p id="num-asked">placeholder<p>
+                    <p id="num-correct">placeholder</p>
                 </div>
             </div>
-            
-            <button class="button" id="game-button">Check Answer</button>
-            <div class="status-bar">
-                <div id="progress"></div>
-                <p id="num-asked">2 of 10<p>
-                        <p id="num-correct">placeholder</p>
+
+            <div class="panel" id="end-panel">
+                <p class="info-text" id="result-msg">placeholder</p>
+                <p id="result-text">placeholder</p>
+                <button class="button" id="play-again">Play Again</button>
+                <button class="button" id="end-game">End Game</button>
             </div>
+
         </div>
 
-        <div class="panel" id="end-panel">
-            <p class="info-text" id="result-msg">placeholder</p>
-            <p id="result-text">placeholder</p>
-            <button class="button" id="play-again">Play Again</button>
-            <button class="button" id="end-game">End Game</button>
-        </div>
-
-    </div>
-
-    <script src="assets/js/data.js"></script>
-    <script src="assets/js/script.js"></script>
-    <!-- font awesome script -->
-    <script src="https://kit.fontawesome.com/6fbe53beed.js" crossorigin="anonymous"></script>
-</body>
+        <script src="assets/js/data.js"></script>
+        <script src="assets/js/script.js"></script>
+        <!-- font awesome script -->
+        <script src="https://kit.fontawesome.com/6fbe53beed.js" crossorigin="anonymous"></script>
+    </body>
 
 </html>

@@ -200,27 +200,30 @@ The questions currently available on the website are quite tricky and so probabl
 
 ## Testing
 
-### Validator Testing - to be written and extended for JS
+### Validator Testing 
 
 - [HTML Validator](https://validator.w3.org/)
 
-    - result for to be written
-      ![to be written](documentation/validation-results/to be written)
+    - result for index.html
+      ![Index HTML](documentation/validation/html-validation-index.png)
   
-    - Full validation results are available on github here :
-
-        - <a href="to be written" target="_blank">to be written</a>
 
 - [CSS Validator](https://jigsaw.w3.org/css-validator/)
 
     - result for styles.css 
-      ![to be written](to be written)
+      ![Styles CSS](documentation/validation/css-validation-styles.png)
 
-      ????? to be written - The warnings are due to 1) import of the Google fonts and 2) a webkit extension for Safari support of the flip-card effect used on the home page.
+      The warnings are due to 1) import of the Google fonts and 2) usage of root variables.
 
-    - Full validation results are available on github here :
+- [Javascript Validator](https://jshint.com/)
 
-        - <a href="to be written" target="_blank">to be written</a>
+    - result for script.js 
+      ![Script JS](documentation/validation/js-validation-script.png)
+
+    - result for data.js 
+      ![Data JS](documentation/validation/js-validation-data.png)
+
+      The reason for the unused variable "quiz" message is that the data.js file holds the game data in a separate file to the rest of the site code. 
 
 ### Browser Compatibility
 
@@ -298,4 +301,4 @@ The questions currently available on the website are quite tricky and so probabl
 
 ### Acknowledgments
 
-- To be written.
+- Thank you to my mentor Brian Macharia for his ongoing help and feedback.  He has provided me with lots of tips and resources to help improve my coding and testing.  Thanks also to my tutor Kasia Bogucka for facilitating stand-ups and workshops which are always very useful for catching up with everyone and getting some really useful advice and support.
