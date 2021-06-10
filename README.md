@@ -237,7 +237,7 @@ The anagrams currently available on the website are quite tricky and so probably
     
 ### Test Cases and Results
 
-- The below table details the test cases that were used, the results and a cross-reference to the Feature ID that each test case exercised (click to open iamge):
+- The below table details the test cases that were used, the results and a cross-reference to the Feature ID that each test case exercised (click to open image):
 
   <details>
     <summary>Test Cases</summary>
