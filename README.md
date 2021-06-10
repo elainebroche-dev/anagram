@@ -71,11 +71,11 @@ The anagrams currently available on the website are quite tricky and so probably
 
 -   __F05 Play a round of 10 anagrams (Play Game screen)__
 
-    - Once the user has selected a topic the main game screen is shown.  There are a number of features on this screen, most are detailed in separate feature paragraphs below.  At a high level, this screen screen behaves as follows :
+    - Once the user has selected a topic the Play Game screen is shown.  There are a number of features on this screen, most are detailed in separate feature paragraphs below.  At a high level, this screen screen behaves as follows :
         1. The username and selected Topic Title are displayed on screen.
-        2. User is presented with a question/anagram and 60 second timer is started.
-        3. User enters their answer and clicks "Check Answer"  - or if the timer has run out before the user has answered then the game acts as though "Check Answer" has been clicked.
-        4. The game gives the user feedback on whether or not the correct answer was entered - the background of the answer text box changes to red (wrong) or green (correct) and a "X" or tick symbol icon is displayed.  The number of correct answers is updated as appropriate and displayed on the bottom right of the screen. The "Check Answer" button changes to a "Continue" button at this point (or "End Round" button if this is last anagram in the round) to give the user an opportunity to review the feedback.
+        2. The user is presented with a question/anagram and a 1 minute timer is started.
+        3. Th user enters their answer and clicks "Check Answer"  - or if the timer has run out before the user has answered then the game acts as though "Check Answer" has been clicked.
+        4. The game gives the user feedback on whether or not the correct answer was entered - the background of the answer text box changes to red (incorrect) or green (correct) and a "X" or tick symbol icon is displayed.  The number of correct answers is updated as appropriate and displayed on the bottom right of the screen. The "Check Answer" button changes to a "Continue" button at this point (or "End Round" button if this is the last anagram in the round) to give the user an opportunity to review the feedback.
         5. Once the user is ready to move on, they click the "Continue" button to move to the next question/anagram.  The progress bar and anagram number features at the bottom of the screen are updated, a new anagram is displayed and the timer is refreshed.
         6. As mentioned, on answering anagram 10, the "Check Answer" button changes to an "End Round" button, when the user clicks on this they get feedback for the full round of anagrams.
 
@@ -84,30 +84,30 @@ The anagrams currently available on the website are quite tricky and so probably
       ![Play Game](documentation/images/f05-play-game.png)
 
 -   __F06 Anagram Timer__
-    - On the Play Game screen, the user is given 60 seconds to enter their answer to the current anagram question.  The timer is presented as a bar at the top of the screen which reduces in width to show the decreasing time remaining.
+    - On the Play Game screen, the user is given 1 minute to enter an answer to the current anagram question.  The timer is presented as a bar below the input area which reduces in width to show the decreasing time remaining.
 
     - The timer is stopped if the "Check Answer" button is clicked or if the user clicks the "<<" on the top left of the screen to return to the "Select Topic" screen.
 
       ![Timer](documentation/images/f06-timer.png)
 
 -   __F07 Progress Bar and "X OF 10" phrase__
-    - On the Play Game screen, both of these elements support the user in easily seeing how far they have progressed in the current round of anagrams. The progress bar increases in width by 10% as each new anagram is displayed and the X value of the "X OF 10" phrase at the bottom right of the screen also gets incremented.
+    - On the Play Game screen, this feature supports the user in easily seeing how far they have progressed in the current round of anagrams. The progress bar increases in width by 10% as each new anagram is displayed and the x value of the "x OF 10" phrase at the bottom right of the screen also gets incremented.
 
       ![Progress](documentation/images/f07-progress-bar.png)
 
 -   __F08 Running total of correct answers__
-    - On the Play Game screen, there is a "N CORRECT ANSWERS" phrase on the bottom right of the screen that keeps a running total of the number of anagrams the user has answered correctly in the current round - this supports the user in easily seeing their running tally.
+    - On the Play Game screen, there is a phrase "n CORRECT ANSWERS" at the bottom right of the screen that keeps a running total of the number of anagrams the user has answered correctly in the current round - this supports the user in easily seeing their running tally.
 
       ![Correct Answers](documentation/images/f08-correct-answers.png)
 
 -   __F09 Check Answer button__
-    - On the Play Game screen, the user's answer is checked when either a) the user clicks the Check Answer button b) the user presses the Enter key when focus is on the answer text field or c) when the timer runs out (60 seconds).  When the Check Answer is triggered a number of changes happen.
+    - On the Play Game screen, the user's answer is checked when either a) the user clicks the Check Answer button b) the user presses the Enter key when focus is on the answer text field or c) when the timer runs out (1 minute).  When the Check Answer is triggered a number of changes happen.
 
         1. The timer is stopped.
         2. The anagram text displayed on screen is replaced with the expected answer text.
         3. The answer given by the user is checked to see if it matches the expected answer.
-        4. If the user answer is correct, the background of the input text field turns green, the tick symbol icon is displayed under the input field and the X value in the "X CORRECT ANSWERS" phrase is increased by 1.
-        5. If the user answer is not correct, the background of the input text field turns red, and an "X" icon is displayed under the input field.
+        4. If the answer is correct, the background of the input text field turns green, the tick symbol icon is displayed under the input field and the n value in the "n CORRECT ANSWERS" phrase is increased by 1.
+        5. If the answer is not correct, the background of the input text field turns red, and an "X" icon is displayed under the input field.
         6. The Check Answer button becomes a Continue button (F10) (or End Round button (F11) if the current anagram is the last anagram of the round).
 
       ![Answer is Correct](documentation/images/f09-correct-answer.png)
@@ -117,18 +117,19 @@ The anagrams currently available on the website are quite tricky and so probably
 -   __F10 Continue button__
     - On the Play Game screen, the Continue button allows the user to contol the timing of when they move on to the next anagram.  When they have had a chance to review the feedback from the anagram just finished, they can then click Continue, this will trigger a number of changes.
 
-        1. The timer is refreshed to 60 seconds and started.
+        1. The timer is refreshed and starts again with a 1 minute countdown.
         2. The anagram text displayed on screen is updated to show the next anagram.
         3. The user input area is cleared and the background set to white.
-        4. The icon under input area is changed to a clock symbol indicating that the timer is running.
-        5. The progress bar is increased by 10% and N value in "N OF 10" increased by 1 to reflect that the game has moved on.
+        4. The icon under the input area is changed to a clock symbol indicating that the timer is running.
+        5. The progress bar length is increased by 10% and the x value in "x OF 10" increased by 1 to reflect that the game has moved on.
         6. The Continue button reverts to being the Check Answer button.
 
       ![Continue](documentation/images/f10-continue-button.png)
+
       ![Next Anagram](documentation/images/f10-continue-button-next-anagram.png)
 
 -   __F11 End of Round screen__
-    - As noted under the description of F09 above, the Check Answer button becomes the End Round button once the user answers the last anagram in the round of 10.   Once they have reviewed the feedback for anagram 10 and clicked on the End Round button they are brought to the End of Round screen which shows their total score for the round and displays a message based on that score (see screenshot below).  At this point the user can Play Again - whcih will bring them back to the Select Topic screen, or End Game which brings them back to the initial screen and clears out the username.
+    - As noted under the description of F09 above, the Check Answer button becomes the End Round button once the user answers the last anagram in the round of 10.   Once they have reviewed the feedback for anagram 10 and clicked on the End Round button they are brought to the End of Round screen which shows their total score for the round and displays a message based on that score (see screenshot below).  At this point the user can choose to Play Again - this will bring them back to the Select Topic screen, or End Game which brings them back to the initial Login screen and clears out the username.
 
       ![End of Round](documentation/images/f11-end-of-round.png)
     
