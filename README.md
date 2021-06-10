@@ -1,10 +1,10 @@
-<h1 align="center">ANAGRAM word puzzle Website</h1>
+<h1 align="center">ANAGRAM word puzzle website</h1>
 
 [View the live project here](https://elainebroche-dev.github.io/ms2-anagram/)
 
-ANAGRAM is an online word game.  The user is asked to identify themselves using a username and then can choose from a range of topics.  Once a topic has been chosen the user is asked 10 questions selected randonmly from the list of questions that are available for that topic.  One question/anagram is shown at a time and the user has a 1 minute time limit to guess the anagram.  Once the user enters an answer and clicks "Check Answer", the game gives feedback as to whether the answer was correct or not, and also displays the correct answer.  A progress bar, question count and correct answer count on-screen show the user where they are in the current round and how they are doing.  At the end of the 10 question round the user is brought to an end-of-round screen to see their score and get feedback - from this point they can choose to end the game or go back and select a new topic and try again.
+ANAGRAM is an online word game.  The user is asked to identify themselves using a username and then can choose from a range of topics.  Once a topic has been chosen the user is asked to solve 10 anagrams, selected randomly from the list of anagrams that are available for that topic.  One anagram is shown at a time and the user has a 1 minute time limit to enter the answer.  Once the user enters an answer and clicks "Check Answer", the game gives feedback as to whether it was correct or not, and also displays the correct answer.  A progress bar, anagram/question count and correct answer count on-screen show the user where they are in the current round and how they are doing.  At the end of the 10 anagram round the user is brought to an end-of-round screen to see their score and get feedback - from this point they can choose to end the game or go back and select a new topic and try again.
 
-The questions currently available on the website are quite tricky and so probably best suited to an audience of older players - however, this data is separate from the coding.   Behind the scenes, the data could be modified to change the selection of topics or change the questions asked (e.g. adding more questions would improve the 'randomness' of the rounds).  A potential future feature could be the provision of a user-interface to change this data.
+The anagrams currently available on the website are quite tricky and so probably best suited to an audience of older players - however, this data is separate from the coding.   Behind the scenes, the data could be modified to change the selection of topics or change the anagrams/questions asked (e.g. adding more would improve the 'randomness' of the rounds).  A potential future feature could be the provision of a user-interface to change this data.
 
 ![Mockup](documentation/images/resp-mockup.png)
 
@@ -23,9 +23,9 @@ The questions currently available on the website are quite tricky and so probabl
 
 1. Easily determine the purpose of the website.
 2. Enter a username and have this visible on screen while the game is in progress.
-3. Choose from a list of topics to answer questions on.
-4. Play a round of 10 random anagram questions on the topic selected.
-5. Easily tell which question of the round is being asked.
+3. Choose from a list of topics to answer anagrams on.
+4. Play a round of 10 random anagrams on the topic selected.
+5. Easily tell which anagram of the round is being asked.
 6. See a running total of correct answers.
 7. See a timer to indicate how much time is left to enter an answer.
 8. Get feedback on whether or not the correct answer has been entered.
@@ -63,7 +63,7 @@ The questions currently available on the website are quite tricky and so probabl
 
 -   __F04 Select Topic__
 
-    - Depending on the data available the user will be shown a maximum of 4 topic buttons to select from - currently data for 4 topics has been provided and so the screen will appear as shown in the below screenshot.  Each button is labelled with the topic title.  The user can quit the game at this point by clicking on the "<<" at the top left of the screen. Clicking on a topic button will start a round of questions on the selected topic.
+    - Depending on the data available the user will be shown a maximum of 4 topic buttons to select from - currently data for 4 topics has been provided and so the screen will appear as shown in the below screenshot.  Each button is labelled with the topic title.  The user can quit the game at this point by clicking on the "<<" at the top left of the screen. Clicking on a topic button will start a round of anagrams on the selected topic.
 
       ![Choose Topic](documentation/images/f04-select-topic.png)
 
@@ -73,9 +73,9 @@ The questions currently available on the website are quite tricky and so probabl
         1. The username and selected Topic Title are displayed on screen.
         2. User is presented with a question/anagram and 60 second timer is started.
         3. User enters their answer and clicks "Check Answer"  - or if the timer has run out before the user has answered then the game acts as though "Check Answer" has been clicked.
-        4. The game gives the user feedback on whether or not the correct answer was entered - the background of the answer text box changes to red (wrong) or green (correct) and a "X" or tick symbol icon is displayed.  The number of correct answers is updated as appropriate and displayed on the bottom right of the screen. The "Check Answer" button changes to a "Continue" button at this point (or "End Round" button if this is question 10) to give the user an opportunity to review the feedback.
-        5. Once the user is ready to move on, they click the "Continue" button to move to the next question/anagram.  The progress bar and question number features at the bottom of the screen are updated, a new question is displayed and the timer is refreshed.
-        6. As mentioned, on answering question 10, the "Check Answer" button changes to an "End Round" button, when the user clicks on this they get feedback for the full round of questions.
+        4. The game gives the user feedback on whether or not the correct answer was entered - the background of the answer text box changes to red (wrong) or green (correct) and a "X" or tick symbol icon is displayed.  The number of correct answers is updated as appropriate and displayed on the bottom right of the screen. The "Check Answer" button changes to a "Continue" button at this point (or "End Round" button if this is last anagram in the round) to give the user an opportunity to review the feedback.
+        5. Once the user is ready to move on, they click the "Continue" button to move to the next question/anagram.  The progress bar and anagram number features at the bottom of the screen are updated, a new anagram is displayed and the timer is refreshed.
+        6. As mentioned, on answering anagram 10, the "Check Answer" button changes to an "End Round" button, when the user clicks on this they get feedback for the full round of anagrams.
 
     - Clicking the "<<" at the top left of the screen will bring the user back to the "Select Topic" screen.
 
@@ -89,12 +89,12 @@ The questions currently available on the website are quite tricky and so probabl
       ![Timer](documentation/images/f06-timer.png)
 
 -   __F07 Progress Bar and "X OF 10" phrase__
-    - On the Play Game screen, both of these elements support the user in easily seeing how far they have progressed in the current round of anagrams/questions. The progress bar increases in width by 10% as each new question is displayed and the X value of the "X OF 10" phrase at the bottom right of the screen also gets incremented.
+    - On the Play Game screen, both of these elements support the user in easily seeing how far they have progressed in the current round of anagrams. The progress bar increases in width by 10% as each new anagram is displayed and the X value of the "X OF 10" phrase at the bottom right of the screen also gets incremented.
 
       ![Progress](documentation/images/f07-progress-bar.png)
 
 -   __F08 Running total of correct answers__
-    - On the Play Game screen, there is a "N CORRECT ANSWERS" phrase on the bottom right of the screen that keeps a running total of the number of questions the user has answered correctly in the current round - this supports the user in easily seeing their running tally.
+    - On the Play Game screen, there is a "N CORRECT ANSWERS" phrase on the bottom right of the screen that keeps a running total of the number of anagrams the user has answered correctly in the current round - this supports the user in easily seeing their running tally.
 
       ![Correct Answers](documentation/images/f08-correct-answers.png)
 
@@ -102,31 +102,31 @@ The questions currently available on the website are quite tricky and so probabl
     - On the Play Game screen, the user's answer is checked when either a) the user clicks the Check Answer button b) the user presses the Enter key when focus is on the answer text field or c) when the timer runs out (60 seconds).  When the Check Answer is triggered a number of changes happen.
 
         1. The timer is stopped.
-        2. The question text displayed on screen is replaced with the expected answer text.
+        2. The anagram text displayed on screen is replaced with the expected answer text.
         3. The answer given by the user is checked to see if it matches the expected answer.
         4. If the user answer is correct, the background of the input text field turns green, the tick symbol icon is displayed under the input field and the X value in the "X CORRECT ANSWERS" phrase is increased by 1.
         5. If the user answer is not correct, the background of the input text field turns red, and an "X" icon is displayed under the input field.
-        6. The Check Answer button becomes a Continue button (F10) (or End Round button (F11) if the current question is the last question).
+        6. The Check Answer button becomes a Continue button (F10) (or End Round button (F11) if the current anagram is the last anagram of the round).
 
       ![Answer is Correct](documentation/images/f09-correct-answer.png)
 
       ![Answer is Incorrect](documentation/images/f09-incorrect-answer.png)
    
 -   __F10 Continue button__
-    - On the Play Game screen, the Continue button allows the user to contol the timing of when they move on to the next question.  When they have had a chance to review the feedback from the question just finished, they can then click Continue, this will trigger a number of changes.
+    - On the Play Game screen, the Continue button allows the user to contol the timing of when they move on to the next anagram.  When they have had a chance to review the feedback from the anagram just finished, they can then click Continue, this will trigger a number of changes.
 
         1. The timer is refreshed to 60 seconds and started.
-        2. The question text displayed on screen is updated to show the next question.
+        2. The anagram text displayed on screen is updated to show the next anagram.
         3. The user input area is cleared and the background set to white.
         4. The icon under input area is changed to a clock symbol indicating that the timer is running.
         5. The progress bar is increased by 10% and N value in "N OF 10" increased by 1 to reflect that the game has moved on.
         6. The Continue button reverts to being the Check Answer button.
 
       ![Continue](documentation/images/f10-continue-button.png)
-      ![Next Question](documentation/images/f10-continue-button-next-question.png)
+      ![Next Anagram](documentation/images/f10-continue-button-next-anagram.png)
 
 -   __F11 End of Round screen__
-    - As noted under the description of F09 above, the Check Answer button becomes the End Round button once the user answers the last question in the round of 10.   Once they have reviewed the feedback for question 10 and clicked on the End Round button they are brought to the End of Round screen which shows their total score for the round and displays a message based on that score (see screenshot below).  At this point the user can Play Again - whcih will bring them back to the Select Topic screen, or End Game which brings them back to the initial screen and clears out the username.
+    - As noted under the description of F09 above, the Check Answer button becomes the End Round button once the user answers the last anagram in the round of 10.   Once they have reviewed the feedback for anagram 10 and clicked on the End Round button they are brought to the End of Round screen which shows their total score for the round and displays a message based on that score (see screenshot below).  At this point the user can Play Again - whcih will bring them back to the Select Topic screen, or End Game which brings them back to the initial screen and clears out the username.
 
       ![End of Round](documentation/images/f11-end-of-round.png)
     
@@ -141,19 +141,19 @@ The questions currently available on the website are quite tricky and so probabl
 - __Store user scores__
     - Currently the user is asked to enter a username but that is only used to display the name on screen.  Functionality could be added to upload results for that user to a website so it could be compared against other player results or the user could use it to try to beat their own high-score.
 
-- __Provide user-interface to manage topic and question data__
-    - All data for the topic titles and anagram questions and answers is stored separately to the code to run the game.  Functionality could be added to provide an "admin" screen to allow this data to be changed (add/delete/modify) to build similar quizzes for a different audience.
+- __Provide user-interface to manage topic and anagram/question data__
+    - All data for the topic titles and anagram questions and answers is stored separately to the code to run the game.  Functionality could be added to provide an "admin" screen to allow this data to be changed (add/delete/modify) to build similar quizzes for a different audience.  
 
 - __Extend Topic selection functionality__
     - A maximum of 4 topic titles are listed on the topics screen.  Functionality could be added so that if more than 4 titles were available in the quiz data structure then either a random selection of 4 titles could be picked, or all available titles could be presented to the user to choose from.
 
 - __Extend error handling__
-    - Basic error catch/throw code has been added to the project at some critical function points.  As the Topic and Anagram data is stored in an external js file, there are some checks around this data in relation to assumptions and dependencies in the code - e.g. a check to make sure the "quiz" data structure exists and has a length > 0, and that at least 10 questions exist for each Topic.  However this could be extended and improved to support a more standardized approach to error handling.
+    - Basic error catch/throw code has been added to the project at some critical function points.  As the Topic and Anagram data is stored in an external js file, there are some checks around this data in relation to assumptions and dependencies in the code - e.g. a check to make sure the "quiz" data structure exists and has a length > 0, and that at least 10 anagram questions exist for each Topic.  However this could be extended and improved to support a more standardized approach to error handling.
 
 ## Design
 
 -   ### Imagery
-    - The abstract background image was chosen to complement the grey and orange colour scheme.  The overall effect is designed to look modern and appeal to an adult audience rather than younger players as the questions currently provided target this age group.
+    - The abstract background image was chosen to complement the grey and orange colour scheme.  The overall effect is designed to look modern and appeal to an adult audience rather than younger players as the anagrams currently provided target this age group.
     - Features including the layout of the Play Game screen, positioning and behaviour of the "Check Answer" button, method of presentation of answer feedback, progress bar and behaviour of "<<" in top left of screens were influenced by the UX features of the [Duolingo](https://www.duolingo.com/learn) application.
 
 -   ### Colour Scheme
