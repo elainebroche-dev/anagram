@@ -257,7 +257,6 @@ The anagrams currently available on the website are quite tricky and so probably
 - In the GitHub repository, navigate to the Settings tab, then choose Pages from the left hand menu 
 - From the source section drop-down menu, select the Master Branch
 - Once the master branch has been selected, the page will be automatically refreshed with a detailed ribbon display to indicate the successful deployment
-- Any changes pushed to the master branch will take effect on the live project
 
   The live link can be found here - [ANAGRAM](https://elainebroche-dev.github.io/ms2-anagram/index.html) 
 
@@ -267,6 +266,13 @@ The anagrams currently available on the website are quite tricky and so probably
 - Click the "Code" button to the right of the screen, click HTTPs and copy the link there
 - Open a GitBash terminal and navigate to the directory where you want to locate the clone
 - On the command line, type "git clone" then paste in the copied url and press the Enter key to begin the clone process
+- Changes made to the local clone can be pushed back to the repository using the following commands :
+
+  - git add *filenames*  (or "." to add all changed files)
+  - git commit -m *"text message describing changes"*
+  - git push
+
+- N.B. Any changes pushed to the master branch will take effect on the live project
  
 ## Credits 
 
