@@ -9,18 +9,19 @@ let timer;
 // Wait for the DOM to finish loading then add listeners
 document.addEventListener("DOMContentLoaded", function () {
 
-  // check that the quiz data is available - this code will throw an error if quiz does not exist or quiz is empty
+  // check that the quiz data is available - this code will  
+  // throw an error if quiz does not exist or quiz is empty
   
   if ((typeof quiz === 'undefined') || (!quiz.length)) {
     alert(`Error trying to access Quiz data`);
-    throw `Error trying to access Quiz data. Aborting`;
+    throw `Error trying to access Quiz data.`;
   }
  
   document.getElementById("goBack").addEventListener("click", goBack);
 
   // handle interactions on the login panel
-  document.getElementById("user").addEventListener("keydown", function (event) {
-    if (event.key === "Enter") {
+  document.getElementById("user").addEventListener("keydown", function (evt) {
+    if (evt.key === "Enter") {
       checkUser();
     }
   });
@@ -33,12 +34,13 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // handle interactions on the main game panel
-  document.getElementById("answer").addEventListener("keydown", function (event) {
-    if (event.key === "Enter") {
-      handleGameButton();
-    }
+  document.getElementById("answer").addEventListener("keydown", 
+    function (evt) {
+      if (evt.key === "Enter") {
+        handleGameBtn();
+      }
   });
-  document.getElementById("game-button").addEventListener("click", handleGameButton);
+  document.getElementById("game-btn").addEventListener("click", handleGameBtn);
 
   // handle interactions on the end panel
   document.getElementById("play-again").addEventListener("click", runTopics);
@@ -57,8 +59,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
 /**
  * Put the names of the topics on the 4 topic buttons 
- * if less than 4 topics are available - the number of topic buttons visible will match the number of topics loaded
- * - this function could be extended later to choose 4 topics at random if more data was available in the quiz data structure
+ * if less than 4 topics are available - the number of topic buttons visible 
+ * will match the number of topics loaded - this function could be extended 
+ * later to choose 4 topics at random if more data was available in the quiz 
+ * data structure
  */
 function loadTopics() {
   let topics = document.getElementsByClassName("topic-btn");
@@ -77,13 +81,16 @@ function goBack() {
   for (let panel of panels) {
     if (panel.style.display === "block") {
       if (panel.id === "topic-panel") runLogin();
-      else if ((panel.id === "game-panel") || (panel.id === "end-panel")) runTopics();
+      else if ((panel.id === "game-panel") || (panel.id === "end-panel")) 
+        runTopics();
     }
   }
 }
 
 /**
  * turn on the named panel and turn the others off
+ * 
+ * @param {string} panelName - id of the panel which should be visible
  */
 function showPanel(panelName) {
   let panels = document.getElementsByClassName("panel");
@@ -92,7 +99,8 @@ function showPanel(panelName) {
       panel.style.display = "block";
     } else panel.style.display = "none";
   }
-  document.getElementById("goBack").style.visibility = (panelName === "login-panel") ? "hidden" : "visible";
+  document.getElementById("goBack").style.visibility = 
+    (panelName === "login-panel") ? "hidden" : "visible";
 }
 
 /**
@@ -122,7 +130,7 @@ function runGame() {
   document.getElementById("num-asked").innerText = "0 of 10";
   document.getElementById("num-correct").innerText = "0 correct answers";
 
-  // get the index of the topic so that it can be used when accessing the quiz data structure
+  // get the index of the topic to use when accessing the quiz data structure
   let topicNumber = quiz.map(function (e) {
     return e.topicTitle;
   }).indexOf(document.getElementById("topic-title").innerText);
@@ -138,7 +146,8 @@ function runGame() {
 }
 
 /**
- * show the user the result of the round and let them choose to play again or return to login
+ * show the user the result of the round and let them choose 
+ * to play again or return to login
  */
 function runEndGame() {
   let currStr = document.getElementById("num-correct").innerText;
@@ -160,7 +169,7 @@ function runEndGame() {
       break;
     default:
       alert(`Error checking num correct answers: ${numCorrect}`);
-      throw `Error checking num correct answers: ${numCorrect}. Aborting`;
+      throw `Error checking num correct answers: ${numCorrect}.`;
   }
   document.getElementById("result-text").innerText = numCorrect + " out of 10";
   document.getElementById("result-msg").innerText = msgStr;
@@ -187,16 +196,21 @@ function checkUser() {
 }
 
 /**
- * build an array of 10 questions randomly picked from the the questions available for the topic
+ * build array of 10 questions randomly picked from questions 
+ * available for the topic
+ * 
+ * @param {int} topicNumber - index of the current topic within the quiz DS
  */
 function buildThisRound(topicNumber) {
-  // build an array of 10 unique random numbers between 0 and (the number of questions available for the 
-  // current topic) - 1      .... because the topics may have differing numbers of questions
+  // build an array of 10 unique random numbers between 0 and (the number of 
+  // questions available for the current topic) - 1  .... because the topics 
+  // may have differing numbers of questions
 
   // first check that at least 10 questions are available to choose from
-  if (quiz[topicNumber].questions.length < 10) {
-    alert(`Error - minimum of 10 questions required.  Only ${quiz[topicNumber].questions.length} questions are available.`);
-    throw `Error - minimum of 10 questions required.  Only ${quiz[topicNumber].questions.length} questions are available. Aborting`;
+  let qtot = quiz[topicNumber].questions.length;
+  if (qtot < 10) {
+    alert(`Error - min 10 questions required.  Only ${qtot} questions found.`);
+    throw `Error - min 10 questions required.  Only ${qtot} questions found.`;
   }
 
   let arr = [];
@@ -216,17 +230,21 @@ function buildThisRound(topicNumber) {
 
 /** 
  * generate a random number between min and max (inclusive)
+ * 
+ * @param {int} min - lowest number within random number range
+ * @param {int} max - highest number within random number range
+ * @return {int} number in range
  */
 function randomIntFromInterval(min, max) {
   return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
 /**
- * decide on how to handle the button click on the main game panel depending on state
+ * decide on how to handle button click on main game panel depending on state
  */
-function handleGameButton() {
+function handleGameBtn() {
 
-  let currState = document.getElementById("game-button").innerText;
+  let currState = document.getElementById("game-btn").innerText;
   switch (true) {
     case (currState === "End Round"):
       runEndGame();
@@ -239,7 +257,7 @@ function handleGameButton() {
       break;
     default:
       alert(`Unknown button click: ${currState}`);
-      throw `Unknown button click: ${currState}. Aborting`;
+      throw `Unknown button click: ${currState}.`;
   }
 }
 
@@ -251,9 +269,10 @@ function checkAnswer() {
   clearInterval(timer);
 
   let answer = thisRoundAnswers.pop();
+  let userAnswer = document.getElementById("answer").value;
   document.getElementById("word-display").innerText = answer;
-  let isCorrect = stringsMatch(answer, document.getElementById("answer").value);
-  let icon = document.getElementById("response-icon");
+  let isCorrect = stringsMatch(answer, userAnswer);
+  let icon = document.getElementById("resp-icon");
   if (isCorrect) {
     incCounter("num-correct");
     icon.classList.add("fa-check-circle");
@@ -264,15 +283,22 @@ function checkAnswer() {
     icon.classList.remove("fa-check-circle", "fa-clock");
     document.getElementById("answer").style.background = "#ec5959";
   }
-  document.getElementById("response-icon").style.visibility = "visible";
+  document.getElementById("resp-icon").style.visibility = "visible";
 
   let elem = document.getElementById("num-asked");
-  let questionsAsked = parseInt(elem.innerText.substring(0, elem.innerText.indexOf(" ")));
-  document.getElementById("game-button").innerText = (questionsAsked < 10) ? "Continue" : "End Round";
+  let questionsAsked = 
+    parseInt(elem.innerText.substring(0, elem.innerText.indexOf(" ")));
+  document.getElementById("game-btn").innerText = 
+    (questionsAsked < 10) ? "Continue" : "End Round";
 }
 
 /**
- * clean up the input strings and compare them - return true if they match, otherwise false.
+ * clean up strings and compare them - return true if 
+ * they match, otherwise false.
+ * 
+ * @param {string} str1 - first string to be compared
+ * @param {string} str2 - second string to be compared
+ * @return {bool} true if strings match, otherwise false
  */
 function stringsMatch(str1, str2) {
   // replace multiple whitespace chars with a single space
@@ -282,7 +308,8 @@ function stringsMatch(str1, str2) {
 }
 
 /** 
- * move on to the next question - initalize answer field, progress bar, question, action button and response icon 
+ * move on to the next question - initalize answer field, progress bar, 
+ * question, action button and response icon 
  */
 function askNextQuestion() {
   let currNum = incCounter("num-asked");
@@ -290,14 +317,19 @@ function askNextQuestion() {
   document.getElementById("answer").value = "";
   document.getElementById("progress").style.width = currNum * 10 + "%";
   document.getElementById("word-display").innerText = thisRoundQuestions.pop();
-  document.getElementById("game-button").innerText = "Check Answer";
-  document.getElementById("response-icon").classList.add("fa-clock");
-  document.getElementById("response-icon").classList.remove("fa-times-circle", "fa-check-circle");
+  document.getElementById("game-btn").innerText = "Check Answer";
+  document.getElementById("resp-icon").classList.add("fa-clock");
+  document.getElementById("resp-icon").classList
+    .remove("fa-times-circle", "fa-check-circle");
   startTimer();
 }
 
 /**
- * for the item id passed in, get the first part of the string and increment it, put it back in the html 
+ * for id passed in, get the first part of the string and 
+ * increment it, put it back in the html 
+ * 
+ * @param {string} itemName - string to be updated 
+ * @return {int} the updated number embedded in the string
  * */
 function incCounter(itemName) {
   let currStr = document.getElementById(itemName).innerText;
@@ -327,8 +359,8 @@ function startTimer() {
         elem.style.width = (width / 24).toFixed(2) + "%";
       }
     } catch (e) {
-      clearInterval(timer);     // something went wrong so clear the interval timer
-      throw e;                  // re-throw the error
+      clearInterval(timer);   // something went wrong so clear timer
+      throw e;                // re-throw the error
     }
   }
 }
@@ -358,10 +390,10 @@ function startTimer() {
         c++;
       } else {
         clearInterval(keepGoing);
-        fadeIn(document.getElementById("game-title"));            // fade in game title
+        fadeIn(document.getElementById("game-title"));  // fade in game title
       }
     } catch(e) {
-      clearInterval(keepGoing);   // something has gone wrong so clear the interval timer
+      clearInterval(keepGoing);   // something has gone wrong so clear timer
       throw e;
     }
   }, 100);
@@ -369,6 +401,8 @@ function startTimer() {
 
 /**  
  * fade in the game title
+ * 
+ * @param {HTMLElement} - element to apply fade-in to
  */
  function fadeIn(element) {
   let op = 0.1;  // initial opacity
